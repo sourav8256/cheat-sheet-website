@@ -9,9 +9,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=ruby&amp;skin=sons-of-obsidian"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=ruby&amp;skin=sons-of-obsidian"></script>
+
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 
   <style>
+
+    .my-col{
+      margin-bottom: 10px;
+    }
 
   </style>
 
@@ -45,96 +56,9 @@
 
 
 
-    <div class="row">
-
-      <div class="col-12 col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
 
 
-
-      <div class="col-12 col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="row">
-
-      <div class="col-12 col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-12 col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
+    <div id="app"></div>
 
 
     <div class="fixed-bottom bg-primary">
@@ -163,14 +87,14 @@
         It is used for this and that. I want to know what.
           </code>
           </pre>
-        </iframe>
+          </iframe>
         </div>
       </div>
 
     </div>
 
 
-<br>
+    <br>
     <div class="jumbotron">
       <h1 class="display-3">React - CheatSheet</h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
@@ -191,6 +115,54 @@
 
 
 
+  <script>
+
+
+
+    window.onload = function () {
+
+
+      var content = "";
+
+      axios
+        .get('https://raw.githubusercontent.com/LearnWebCode/json-example/master/animals-1.json')
+        .then(({ data }) => {
+          var json = data;
+          var i = 0;
+
+          while (i < json.length) {
+            content += "<div class=\"row\">";
+            for (var j = 0; j < 2; j++) {
+
+              content += `      <div class="col-12 col-sm-6 my-col">
+        <div class="card">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>`;
+
+
+              i++;
+            }
+
+            content += "</div>";
+          }
+
+
+          document.getElementById("app").innerHTML = content;
+
+        })
+        .catch((err) => { })
+
+    }
+
+
+  </script>
 
 
 
