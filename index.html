@@ -10,7 +10,10 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   <script
-    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=ruby&amp;skin=sons-of-obsidian"></script>
+    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+
+    <script
+    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.js?skin=sons-of-obsidian"></script>
 
 
 
@@ -19,11 +22,15 @@
 
 
   <style>
-
-    .my-col{
+    .my-col {
       margin-bottom: 10px;
     }
 
+    .cross-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   </style>
 
   <title>Document</title>
@@ -61,12 +68,14 @@
     <div id="app"></div>
 
 
-    <div class="fixed-bottom bg-primary">
+    <div id="example-panel" class="fixed-bottom bg-primary">
+
+      <div class="row"><br><br></div>
 
       <div class="row">
         <div class="col-12 col-sm-6">
           <?prettify linenums=1?>
-          <pre class="prettyprint">
+          <pre  id="code" class="prettyprint">
             <code>
   class Voila {
     public:
@@ -83,13 +92,18 @@
           <!-- <iframe class="embed-responsive-item col-12" src="//www.youtube.com/embed/48OJbbI0DfE" allowfullscreen></iframe> -->
           <?prettify linenums=0?>
           <pre class="prettyprint">
-            <code>
+            <code  id="description">
         It is used for this and that. I want to know what.
           </code>
           </pre>
-          </iframe>
+          <!-- </iframe> -->
         </div>
       </div>
+
+
+      <button id="example-panel-close-btn" class='btn btn-success cross-btn'>
+        X
+      </button>
 
     </div>
 
@@ -117,34 +131,51 @@
 
   <script>
 
-
+    var mainData = "";
 
     window.onload = function () {
 
 
+      prettyPrint();
+
+      loadData();
+
+      setupViews();
+    }
+
+
+
+    function loadData() {
       var content = "";
 
       axios
-        .get('https://raw.githubusercontent.com/LearnWebCode/json-example/master/animals-1.json')
+        .get('https://run.mocky.io/v3/b309410a-d149-4cdb-931d-c42bc67c4a4a')
         .then(({ data }) => {
+          mainData = data;
           var json = data;
           var i = 0;
+
 
           while (i < json.length) {
             content += "<div class=\"row\">";
             for (var j = 0; j < 2; j++) {
+              var obj = json[i];
+
+              if (obj == undefined) continue
 
               content += `      <div class="col-12 col-sm-6 my-col">
-        <div class="card">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>`;
+  <div class="card">
+    <div class="card-header">
+      `+ obj['category-name'] + `
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Special title treatment</h4>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+    `+ getButtonLinks(obj['sub-list']) + `
+    </div>
+  </div>
+</div>`;
 
 
               i++;
@@ -157,10 +188,50 @@
           document.getElementById("app").innerHTML = content;
 
         })
-        .catch((err) => { })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+
+
+    function setupViews() {
+
+      $('#example-panel-close-btn').on('click', function (e) {
+
+        $('#example-panel').hide();
+
+      })
+
+
 
     }
 
+
+    function getButtonLinks(json) {
+
+      console.log(json);
+
+      var content = ` <ul class="list-group list-group-flush">`;
+
+      for (var i = 0; i < json.length; i++) {
+        content += `<li class="list-group-item"><button onclick="fetchExample(1,1)" type="button" class="btn btn-link">` + json[i]['name'] + `</button></li>`;
+      }
+
+      content += `</ul>`;
+
+      return content;
+    }
+
+    function fetchExample(category,subCategory){
+      console.log(mainData[1]['sub-list'][1]['code']);
+      $('#example-panel').show();
+      $('#code').html(mainData[category]['sub-list'][subCategory]['code']).removeClass("prettyprinted");
+      $('#description').html(mainData[category]['sub-list'][subCategory]['description']).parent().removeClass("prettyprinted");
+      prettyPrint();
+
+
+    
+    }
 
   </script>
 

@@ -1,0 +1,71 @@
+[
+    {
+        "category-name" : "First Category",
+        "sub-list" : [
+            {
+                "id" : "sfdjsl1",
+                "name" : "First sub category1",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl1",
+                "description" : " There saf lskdjf sdjrkejkerj1"
+            },
+            {
+                "id" : "sfdjsl2",
+                "name" : "First sub category2",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl2",
+                "description" : " There saf lskdjf sdjrkejkerj2"
+            },
+            {
+                "id" : "sfdjsl3",
+                "name" : "First sub category3",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl3",
+                "description" : " There saf lskdjf sdjrkejkerj3"
+            }
+        ]
+    },
+    {
+        "category-name" : "Second Category",
+        "sub-list" : [
+            {
+                "id" : "sfdjsl1",
+                "name" : "First sub category1",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl1",
+                "description" : " There saf lskdjf sdjrkejkerj1"
+            },
+            {
+                "id" : "sfdjsl2",
+                "name" : "First sub category2",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl2",
+                "description" : " There saf lskdjf sdjrkejkerj2"
+            },
+            {
+                "id" : "sfdjsl3",
+                "name" : "First sub category3",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl3",
+                "description" : " There saf lskdjf sdjrkejkerj3"
+            }
+        ]
+    },
+    {
+        "category-name" : "Third Category",
+        "sub-list" : [
+            {
+                "id" : "sfdjsl1",
+                "name" : "First sub category1",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl1",
+                "description" : " There saf lskdjf sdjrkejkerj1"
+            },
+            {
+                "id" : "sfdjsl2",
+                "name" : "First sub category2",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl2",
+                "description" : " There saf lskdjf sdjrkejkerj2"
+            },
+            {
+                "id" : "sfdjsl3",
+                "name" : "First sub category3",
+                "code" : "lsdfjdsl sdfjskdljf lsdjfl3",
+                "description" : " There saf lskdjf sdjrkejkerj3"
+            }
+        ]
+    }
+]
