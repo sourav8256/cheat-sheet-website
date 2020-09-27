@@ -1,0 +1,154 @@
+{
+    "title": "Angular - CheatSheet",
+    "data": [
+        {
+            "category-name": "Getting Starteed",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Installation",
+                    "code": "",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "First sub category2",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl2",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "Initial Settings",
+                    "code": "Delta Time\nrb.AddForce(0,0,200 * Time.deltaTime);\n\nUse Fixed update for physics FixedUpdate instead of Update",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Working",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Camera",
+                    "code": "Mouse wheel to zoom in and out\n middle mouse button to pan around\nAlt+Lclick : pivot around the center of our view\nPress F to focus on something quickly",
+                    "description": "\nReplace Todos with class name \n If you change the path where \ncomponents are stored please update accordingly\n while using it in the render method please use tags like <Todos />"
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Passing props",
+                    "code": "<Todos\r\n         todos={this.state.todos}\r\n         markComplete={this.markComplete}\r\n         delTodo={this.delTodo}\r\n \/>;\n\n //This can be accessed in the called componenet using \nthis.props.todos",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3\r\n",
+                    "name": "Saving variables in State",
+                    "code": "state = {\r\n    todos: []\r\n};",
+                    "description": "Inside the Render method there is a method called State. Declare your variables there."
+                }
+            ]
+        },
+        {
+            "category-name": "Create",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Cube",
+                    "code": "Right click in hierarchy/Click on create > 3D object > Cube",
+                    "description": " There saf lskdjf sdjrkejkerj1"
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Filtering array based on condition",
+                    "code": "this.setState({\r\n        todos: [...this.state.todos.filter(todo => todo.id !== id)]\r\n})",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Materials",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Texture Materials",
+                    "code": "Project Panel > Right click > Create > Material > Drag material onto cube",
+                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Camera Clear Flags(Camera Background)",
+                    "code": "Select Camera > Clear Flags > Select option",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Scene",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "New Scene",
+                    "code": "To Save scene Ctrl+s > name the scene",
+                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Add Bootstrap",
+                    "code": "1.run commnad in cmd\r\nnpm install bootstrap --save\r\n\r\n2.after install add this to index.js\r\nimport 'bootstrap\/dist\/css\/bootstrap.min.css';",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Physics",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Body",
+                    "code": "In Inspector > Add a new component > Physics > Rigid Body",
+                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Collider",
+                    "code": "Add Component > Sphere Collider",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Programming",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Add script to object",
+                    "code": "Select object > Add component > New Script > Name the script and select language > Select create and add\n\nOr just drag script from the Project panel into objects\n\nThen double click on the script to open in Visual Studio or MonoDevelop",
+                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                }
+            ]
+        }
+    ]
+}

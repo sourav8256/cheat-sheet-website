@@ -1,0 +1,97 @@
+{
+    "title": "Angular - CheatSheet",
+    "data": [
+        {
+            "category-name": "Getting Started",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Installation",
+                    "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "First sub category2",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl2",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Working",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Importing components ",
+                    "code": "import Todos from './components/Todos';\n\n //in the render method \n<Todos \/>;",
+                    "description": "\nReplace Todos with class name \n If you change the path where \ncomponents are stored please update accordingly\n while using it in the render method please use tags like <Todos />"
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Passing props",
+                    "code": "<Todos\r\n         todos={this.state.todos}\r\n         markComplete={this.markComplete}\r\n         delTodo={this.delTodo}\r\n \/>;\n\n //This can be accessed in the called componenet using \nthis.props.todos",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3\r\n",
+                    "name": "Saving variables in State",
+                    "code": "state = {\r\n    todos: []\r\n};",
+                    "description": "Inside the Render method there is a method called State. Declare your variables there."
+                }
+            ]
+        },
+        {
+            "category-name": "Data processing",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "For each loop substitute",
+                    "code": " return this.props.todos.map((todo) => (\r\n      <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} delTodo={this.props.delTodo} \/>\r\n ));",
+                    "description": " There saf lskdjf sdjrkejkerj1"
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Filtering array based on condition",
+                    "code": "this.setState({\r\n        todos: [...this.state.todos.filter(todo => todo.id !== id)]\r\n})",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        },
+        {
+            "category-name": "Styling",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Styling",
+                    "code": "  getStyle = () => {\r\n    return {\r\n      background: \"#f4f4f4\",\r\n      padding: \"10px\",\r\n      borderBottom: \"1px #ccc dotted\",\r\n      textDecoration: this.props.todo.completed ? \"line-through\" : \"none\",\r\n    };\r\n  };\r\n\r\n    <div style={this.getStyle()}>",
+                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Add Bootstrap",
+                    "code": "1.run commnad in cmd\r\nnpm install bootstrap --save\r\n\r\n2.after install add this to index.js\r\nimport 'bootstrap\/dist\/css\/bootstrap.min.css';",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "First sub category3",
+                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "description": " There saf lskdjf sdjrkejkerj3"
+                }
+            ]
+        }
+    ]
+}

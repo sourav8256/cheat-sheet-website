@@ -12,7 +12,7 @@
   <script
     src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
 
-    <script
+  <script
     src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.js?skin=sons-of-obsidian"></script>
 
 
@@ -31,6 +31,18 @@
       top: 0;
       right: 0;
     }
+
+    #example-panel {
+      display: none;
+      max-height: 40%;
+    }
+
+    #therow{
+    width: auto;
+    overflow: auto;
+    max-height: 600px;
+    background-color: blue;
+}
   </style>
 
   <title>Document</title>
@@ -47,7 +59,7 @@
 
 
     <div class="jumbotron">
-      <h1 class="display-3">React - CheatSheet</h1>
+      <h1 id="heading" class="display-3"></h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
         calling extra attention to featured content or information.</p>
       <hr class="my-2">
@@ -68,38 +80,31 @@
     <div id="app"></div>
 
 
-    <div id="example-panel" class="fixed-bottom bg-primary">
+    <div id="example-panel" class="fixed-bottom bg-primary overflow-auto">
 
-      <div class="row"><br><br></div>
+      <div class="">
+        <div class="row"><br><br></div>
 
-      <div class="row">
-        <div class="col-12 col-sm-6">
-          <?prettify linenums=1?>
-          <pre  id="code" class="prettyprint">
-            <code>
-  class Voila {
-    public:
-      // Voila
-      static const string VOILA = "Voila";
-    
-      // will not interfere with embedded <a href="#voila2">tags</a>.
-    }
-  }
-          </code>
-          </pre>
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <?prettify linenums=1?>
+            <pre id="code" class="prettyprint">
+              <code>
+            </code>
+            </pre>
+          </div>
+          <div class="col-12 col-sm-6">
+            <!-- <iframe class="embed-responsive-item col-12" src="//www.youtube.com/embed/48OJbbI0DfE" allowfullscreen></iframe> -->
+            <?prettify linenums=1?>
+            <pre id="description" class="prettyprint">
+              <code>
+            </code>
+            </pre>
+            <!-- </iframe> -->
+          </div>
         </div>
-        <div class="col-12 col-sm-6">
-          <!-- <iframe class="embed-responsive-item col-12" src="//www.youtube.com/embed/48OJbbI0DfE" allowfullscreen></iframe> -->
-          <?prettify linenums=0?>
-          <pre class="prettyprint">
-            <code  id="description">
-        It is used for this and that. I want to know what.
-          </code>
-          </pre>
-          <!-- </iframe> -->
-        </div>
+  
       </div>
-
 
       <button id="example-panel-close-btn" class='btn btn-success cross-btn'>
         X
@@ -110,7 +115,7 @@
 
     <br>
     <div class="jumbotron">
-      <h1 class="display-3">React - CheatSheet</h1>
+      <h1 class="display-3"></h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
         calling extra attention to featured content or information.</p>
       <hr class="my-2">
@@ -144,15 +149,22 @@
     }
 
 
+    var getContent = function (href) {
+      var url = new URL(href);
+var c = url.searchParams.get("content");
+console.log(c);
+return c;
+    };
 
     function loadData() {
       var content = "";
 
       axios
-        .get('https://run.mocky.io/v3/b309410a-d149-4cdb-931d-c42bc67c4a4a')
+        .get(getContent(window.location.href)+'.json')
         .then(({ data }) => {
-          mainData = data;
-          var json = data;
+          $('#heading').html(data.title)
+          mainData = data.data;
+          var json = data.data;
           var i = 0;
 
 
@@ -169,10 +181,10 @@
       `+ obj['category-name'] + `
     </div>
     <div class="card-body">
-      <h4 class="card-title">Special title treatment</h4>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <h4 class="card-title"></h4>
+      <p class="card-text"></p>
     
-    `+ getButtonLinks(obj['sub-list']) + `
+    `+ getButtonLinks(i, obj['sub-list']) + `
     </div>
   </div>
 </div>`;
@@ -207,14 +219,14 @@
     }
 
 
-    function getButtonLinks(json) {
+    function getButtonLinks(category, json) {
 
       console.log(json);
 
       var content = ` <ul class="list-group list-group-flush">`;
 
       for (var i = 0; i < json.length; i++) {
-        content += `<li class="list-group-item"><button onclick="fetchExample(1,1)" type="button" class="btn btn-link">` + json[i]['name'] + `</button></li>`;
+        content += `<li class="list-group-item"><button onclick="fetchExample(${category},${i})" type="button" class="btn btn-link">` + json[i]['name'] + `</button></li>`;
       }
 
       content += `</ul>`;
@@ -222,16 +234,42 @@
       return content;
     }
 
-    function fetchExample(category,subCategory){
+    function fetchExample(category, subCategory) {
+
+
+
       console.log(mainData[1]['sub-list'][1]['code']);
       $('#example-panel').show();
-      $('#code').html(mainData[category]['sub-list'][subCategory]['code']).removeClass("prettyprinted");
-      $('#description').html(mainData[category]['sub-list'][subCategory]['description']).parent().removeClass("prettyprinted");
+      $('#code').html(escapeHtml(mainData[category]['sub-list'][subCategory]['code'])).removeClass("prettyprinted");
+      $('#description').html(escapeHtml(mainData[category]['sub-list'][subCategory]['description'])).removeClass("prettyprinted");
       prettyPrint();
-
-
-    
     }
+
+    function decodeUrl(url) {
+      url = url.replace("/%3C/g", "[lts]");
+      url = url.replace("/%3E/g", "[gts]");
+
+      console.log(url);
+      url = decodeURI(url);
+      console.log(url);
+      url = url.replace("/[lts]/g", "<");
+      url = url.replace("/[gts]/g", ">");
+      console.log(url);
+
+      return url;
+    }
+
+
+
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
 
   </script>
 
