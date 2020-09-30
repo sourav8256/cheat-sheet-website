@@ -32,18 +32,16 @@
                     "name": "Camera",
                     "code": "Mouse wheel to zoom in and out\n middle mouse button to pan around\nAlt+Lclick : pivot around the center of our view\nPress F to focus on something quickly",
                     "description": "\nReplace Todos with class name \n If you change the path where \ncomponents are stored please update accordingly\n while using it in the render method please use tags like <Todos />"
-                },
+                }
+            ]
+        },{
+            "category-name": "Camera",
+            "sub-list": [
                 {
-                    "id": "sfdjsl2",
-                    "name": "Passing props",
-                    "code": "<Todos\r\n         todos={this.state.todos}\r\n         markComplete={this.markComplete}\r\n         delTodo={this.delTodo}\r\n \/>;\n\n //This can be accessed in the called componenet using \nthis.props.todos",
-                    "description": " There saf lskdjf sdjrkejkerj2"
-                },
-                {
-                    "id": "sfdjsl3\r\n",
-                    "name": "Saving variables in State",
-                    "code": "state = {\r\n    todos: []\r\n};",
-                    "description": "Inside the Render method there is a method called State. Declare your variables there."
+                    "id": "sfdjsl1",
+                    "name": "Follow an object",
+                    "code": "Method 1:\n\nDrag the camera on to the object in the Hierarchy panel.\n\nMethod 2:\n\n",
+                    "description": "\nReplace Todos with class name \n If you change the path where \ncomponents are stored please update accordingly\n while using it in the render method please use tags like <Todos />"
                 }
             ]
         },
@@ -87,8 +85,8 @@
                 },
                 {
                     "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "name": "Physics Material",
+                    "code": "On the project panel > Right Click > Create > Physics Material",
                     "description": " There saf lskdjf sdjrkejkerj3"
                 }
             ]
@@ -146,6 +144,11 @@
                     "id": "sfdjsl1",
                     "name": "Add script to object",
                     "code": "Select object > Add component > New Script > Name the script and select language > Select create and add\n\nOr just drag script from the Project panel into objects\n\nThen double click on the script to open in Visual Studio or MonoDevelop",
+                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                },{
+                    "id": "sfdjsl1",
+                    "name": "Check Key Presses",
+                    "code": "if( Input.getKey(\"d\")){\n\t//do your things\n}",
                     "description": "Commands \n\n Generate class based component : \"RCE\""
                 }
             ]

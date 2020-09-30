@@ -1,0 +1,148 @@
+{
+    "title": "Html Canvas - CheatSheet",
+    "data": [
+        {
+            "category-name": "Getting Starteed",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Adding canvas to html page",
+                    "code": "<canvas id=\"\" width=\"\" height=\"\"></canvas>\r\n<script>\r\n\r\n</script>\r\n\r\n<!-- go to chriscourses.com to learn lots -->",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Start drawing in canvas",
+                    "code": "<script>\r\nvar c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.moveTo(0, 0);\r\nctx.lineTo(200, 100);\r\nctx.stroke();\r\n</script>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Drawing",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Rectangle",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.rect(20, 20, 150, 100);\r\nctx.stroke();\n\n//For fill rect use ctx.fill() method with same arguments",
+                    "description": "rect(X,Y,Width,Height)"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Circle",
+                    "code": "var canvas = document.getElementById(\"canvas\");\r\nvar ctx = canvas.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.arc(x, y, radius, 0, Math.PI * 2);\r\nctx.fillStyle = \"red\";\r\nctx.fill();\n\n//For stroke use ctx.stroke()",
+                    "description": "rect(X,Y,Width,Height)"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Text",
+                    "code": "var canvas = document.getElementById(\"myCanvas\");\r\nvar ctx = canvas.getContext(\"2d\");\r\nctx.font = \"30px Arial\";\r\nctx.fillText(\"Hello World\",50,50);",
+                    "description": "The second two arguments are the X and Y position"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Line",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.moveTo(0, 0);\r\nctx.lineTo(300, 150);\r\nctx.stroke();",
+                    "description": "rect(X,Y,Width,Height)"
+                }
+            ]
+        },
+        {
+            "category-name": "Game",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Game Loop",
+                    "code": "function update(progress) {\r\n  \/\/ Update the state of the world for the elapsed time since last render\r\n}\r\n\r\nfunction draw() {\r\n  \/\/ Draw the state of the world\r\n}\r\n\r\nfunction loop(timestamp) {\r\n  var progress = timestamp - lastRender\r\n\r\n  update(progress)\r\n  draw()\r\n\r\n  lastRender = timestamp\r\n  window.requestAnimationFrame(loop)\r\n}\r\nvar lastRender = 0\r\nwindow.requestAnimationFrame(loop)",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Clear Canvas",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.fillStyle = \"red\";\r\nctx.fillRect(0, 0, 300, 150);\r\nctx.clearRect(0,0,ctx.canvas.height,ctx.canvas.width);",
+                    "description": "ctx.clearRect(20, 20, 100, 50); helps in clearing out the area of the canvas (to white colour) however if you are using another colour as the background or an image you might need to draw them again."
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Key press events",
+                    "code": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\" style=\"background:green\"><\/canvas>\r\n<script type=\"text\/javascript\">\r\nwindow.addEventListener('keydown',this.check,false);\r\n\r\nfunction check(e) {\r\n    alert(e.keyCode);\r\n}\r\n<\/script>",
+                    "description": "Get key codes at this website https://keycode.info/"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "Sound",
+                    "code": "function sound(src) {\r\n    this.sound = document.createElement(\"audio\");\r\n    this.sound.src = src;\r\n    this.sound.setAttribute(\"preload\", \"auto\");\r\n    this.sound.setAttribute(\"controls\", \"none\");\r\n    this.sound.style.display = \"none\";\r\n    document.body.appendChild(this.sound);\r\n    this.play = function(){\r\n        this.sound.play();\r\n    }\r\n    this.stop = function(){\r\n        this.sound.pause();\r\n    }    \r\n}",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Utilities",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Timestamp",
+                    "code": "const currentTimeInMilliseconds=Date.now(); // unix timestamp in milliseconds",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Properties",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Stroke width",
+                    "code": "//For changing line width use the below property\n\nctx.lineWidth = 10;\n\n",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Colour",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Stroke color",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.strokeStyle = \"#FF0000\";\r\nctx.strokeRect(20, 20, 150, 100);",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Fill color",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.fillStyle = \"#FF0000\";\r\nctx.fillRect(20, 20, 150, 100);",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Arrays for games",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Filter array",
+                    "code": "var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];\r\nconst result = words.filter(word => word.length > 6);\r\nconsole.log(result);\r\n\r\nvar newArray = array.filter(function(item) {\r\n  return condition;\r\n});",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Stack and Queue",
+                    "code": "var stack = [];\r\nstack.push(2);       \/\/ stack is now [2]\r\nstack.push(5);       \/\/ stack is now [2, 5]\r\nvar i = stack.pop(); \/\/ stack is now [2]\r\nalert(i);            \/\/ displays 5\r\n\r\nvar queue = [];\r\nqueue.push(2);         \/\/ queue is now [2]\r\nqueue.push(5);         \/\/ queue is now [2, 5]\r\nvar i = queue.shift(); \/\/ queue is now [5]\r\nalert(i);      ",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Remove an index",
+                    "code": "var arr = ['bill', 'is', 'not', 'lame'];\r\narr.splice(output_items.indexOf('not'), 1);\r\nconsole.log(arr) \/\/returns ['bill', 'is', 'lame']\r\n\r\nvar array = [1,2,'deleted',4,5,'deleted',6,7];\r\nvar newarr = array.filter(function(a){return a !== 'deleted'})",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Filtering array based on condition[requires ES6]",
+                    "code": "this.setState({\r\n        todos: [...this.state.todos.filter(todo => todo.id !== id)]\r\n})",
+                    "description": " There saf lskdjf sdjrkejkerj2"
+                }
+            ]
+        }
+    ]
+}
