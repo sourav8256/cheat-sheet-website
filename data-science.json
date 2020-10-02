@@ -1,0 +1,51 @@
+{
+    "title": "Html Canvas - CheatSheet",
+    "data": [
+        {
+            "category-name": "Getting Started",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Installing Jupiter Notebook",
+                    "code": "pip install jupyter\r\n\r\n\/\/ run using the command\r\n\r\njupyter notebook\r\n\r\n\/\/ incase the above command doesn't work you can run the notebook using\r\n\r\npy -m notebook",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Start drawing in canvas",
+                    "code": "<script>\r\nvar c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.moveTo(0, 0);\r\nctx.lineTo(200, 100);\r\nctx.stroke();\r\n</script>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Examples",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Examples",
+                    "code": "\n\n1. Python handwritten digit recognizer \n\nhttps://github.com/snazrul1/PyRevolution/blob/master/Puzzles/Handwriting_Recognition.ipynb\n\n",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Circle",
+                    "code": "var canvas = document.getElementById(\"canvas\");\r\nvar ctx = canvas.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.arc(x, y, radius, 0, Math.PI * 2);\r\nctx.fillStyle = \"red\";\r\nctx.fill();\n\n//For stroke use ctx.stroke()",
+                    "description": "rect(X,Y,Width,Height)"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Text",
+                    "code": "var canvas = document.getElementById(\"myCanvas\");\r\nvar ctx = canvas.getContext(\"2d\");\r\nctx.font = \"30px Arial\";\r\nctx.fillText(\"Hello World\",50,50);",
+                    "description": "The second two arguments are the X and Y position"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Line",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.moveTo(0, 0);\r\nctx.lineTo(300, 150);\r\nctx.stroke();",
+                    "description": "rect(X,Y,Width,Height)"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "title": "Html Canvas - CheatSheet",
+    "data": [
+        {
+            "category-name": "Getting Started",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Installing Jupiter Notebook",
+                    "code": "pip install jupyter\r\n\r\n\/\/ run using the command\r\n\r\njupyter notebook\r\n\r\n\/\/ incase the above command doesn't work you can run the notebook using\r\n\r\npy -m notebook",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Start drawing in canvas",
+                    "code": "<script>\r\nvar c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.moveTo(0, 0);\r\nctx.lineTo(200, 100);\r\nctx.stroke();\r\n</script>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Javascript",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Local storage",
+                    "code": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<script>\r\nfunction clickCounter() {\r\n  if (typeof(Storage) !== \"undefined\") {\r\n    if (localStorage.clickcount) {\r\n      localStorage.clickcount = Number(localStorage.clickcount)+1;\r\n    } else {\r\n      localStorage.clickcount = 1;\r\n    }\r\n    document.getElementById(\"result\").innerHTML = \"You have clicked the button \" + localStorage.clickcount + \" time(s).\";\r\n  } else {\r\n    document.getElementById(\"result\").innerHTML = \"Sorry, your browser does not support web storage...\";\r\n  }\r\n}\r\n<\/script>\r\n<\/head>\r\n<body>\r\n\r\n<p><button onclick=\"clickCounter()\" type=\"button\">Click me!<\/button><\/p>\r\n<div id=\"result\"><\/div>\r\n<p>Click the button to see the counter increase.<\/p>\r\n<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).<\/p>\r\n\r\n<\/body>\r\n<\/html>\r\n",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Calling Apis",
+                    "code": "\r\n<script src=\"https:\/\/unpkg.com\/axios\/dist\/axios.min.js\"><\/script>\r\n\r\naxios\r\n  .get(\"url\")\r\n  .then(({ data }) => {\r\n    mainData = data.data;\r\n\r\n\r\n  })\r\n  .catch((err) => {\r\n    console.log(err);\r\n  })",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Generating Alphanumeric string",
+                    "code": "function randomString(length, chars) {\r\n    var result = '';\r\n    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];\r\n    return result;\r\n}\r\ndocument.write(randomString(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));",
+                    "description": "The second two arguments are the X and Y position"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Line",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.moveTo(0, 0);\r\nctx.lineTo(300, 150);\r\nctx.stroke();",
+                    "description": "rect(X,Y,Width,Height)"
+                }
+            ]
+        }
+    ]
+}

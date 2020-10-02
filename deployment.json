@@ -1,0 +1,51 @@
+{
+    "title": "Deployment - CheatSheet",
+    "data": [
+        {
+            "category-name": "Heroku",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Nodejs",
+                    "code": "\n>install heroku cli\r\n\r\nheroku login\r\n\r\nmake sure the project is a git repository\r\n\r\n>heroku git:remote -a chat-app-jk\r\n\r\ncommit changes to masters\r\n\r\n>git push heroku masters\r\n\r\napp cannot be run on heroku now it will give application error\r\n\r\ncreate Procfile\r\n\r\ninside the proc file put\r\nweb: node index.js\r\n\r\nSet the port in heroku\r\nwe can use only the port given by heroku\r\nThe port number is available in the variable\r\n\r\nprocess.env.PORT\n\n",
+                    "description": "Example app source code\n\nhttps://github.com/jonnyk20/chat-app"
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Start drawing in canvas",
+                    "code": "<script>\r\nvar c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.moveTo(0, 0);\r\nctx.lineTo(200, 100);\r\nctx.stroke();\r\n</script>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Examples",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Examples",
+                    "code": "\n\n1. Python handwritten digit recognizer \n\nhttps://github.com/snazrul1/PyRevolution/blob/master/Puzzles/Handwriting_Recognition.ipynb\n\n",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Circle",
+                    "code": "var canvas = document.getElementById(\"canvas\");\r\nvar ctx = canvas.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.arc(x, y, radius, 0, Math.PI * 2);\r\nctx.fillStyle = \"red\";\r\nctx.fill();\n\n//For stroke use ctx.stroke()",
+                    "description": "rect(X,Y,Width,Height)"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Text",
+                    "code": "var canvas = document.getElementById(\"myCanvas\");\r\nvar ctx = canvas.getContext(\"2d\");\r\nctx.font = \"30px Arial\";\r\nctx.fillText(\"Hello World\",50,50);",
+                    "description": "The second two arguments are the X and Y position"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Line",
+                    "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.moveTo(0, 0);\r\nctx.lineTo(300, 150);\r\nctx.stroke();",
+                    "description": "rect(X,Y,Width,Height)"
+                }
+            ]
+        }
+    ]
+}
