@@ -2,7 +2,7 @@
     "title": "PHP - CheatSheet",
     "data": [
         {
-            "category-name": "MySql Database",
+            "category-name": "MySql Database (Procedural)",
             "sub-list": [
                 {
                     "id": "sfdjsl1",
@@ -12,26 +12,38 @@
                 },
                 {
                     "id": "sfdjsl2",
+                    "name": "Insert statement",
+                    "code": "\r\n\r\n<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"INSERT INTO MyGuests (firstname, lastname, email)\r\nVALUES ('John', 'Doe', 'john@example.com')\";\r\n\r\nif (mysqli_query($conn, $sql)) {\r\n  echo \"New record created successfully\";\r\n} else {\r\n  echo \"Error: \" . $sql . \"<br>\" . mysqli_error($conn);\r\n}\r\n\r\nmysqli_close($conn);\r\n?>\r\n\r\n\r\n\r\n<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"INSERT INTO MyGuests (firstname, lastname, email)\r\nVALUES ('John', 'Doe', 'john@example.com');\";\r\n$sql .= \"INSERT INTO MyGuests (firstname, lastname, email)\r\nVALUES ('Mary', 'Moe', 'mary@example.com');\";\r\n$sql .= \"INSERT INTO MyGuests (firstname, lastname, email)\r\nVALUES ('Julie', 'Dooley', 'julie@example.com')\";\r\n\r\nif (mysqli_multi_query($conn, $sql)) {\r\n  echo \"New records created successfully\";\r\n} else {\r\n  echo \"Error: \" . $sql . \"<br>\" . mysqli_error($conn);\r\n}\r\n\r\nmysqli_close($conn);\r\n?>\r\n\r\n",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
                     "name": "Select statement",
                     "code": "<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"SELECT id, firstname, lastname FROM MyGuests\";\r\n$result = mysqli_query($conn, $sql);\r\n\r\nif (mysqli_num_rows($result) > 0) {\r\n  \/\/ output data of each row\r\n  while($row = mysqli_fetch_assoc($result)) {\r\n    echo \"id: \" . $row[\"id\"]. \" - Name: \" . $row[\"firstname\"]. \" \" . $row[\"lastname\"]. \"<br>\";\r\n  }\r\n} else {\r\n  echo \"0 results\";\r\n}\r\n\r\nmysqli_close($conn);\r\n?>",
                     "description": " There saf lskdjf sdjrkejkerj2"
                 },
                 {
                     "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
+                    "name": "Update",
+                    "code": "<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"UPDATE MyGuests SET lastname='Doe' WHERE id=2\";\r\n\r\nif (mysqli_query($conn, $sql)) {\r\n  echo \"Record updated successfully\";\r\n} else {\r\n  echo \"Error updating record: \" . mysqli_error($conn);\r\n}\r\n\r\nmysqli_close($conn);\r\n?>",
                     "description": " There saf lskdjf sdjrkejkerj3"
+                },
+                {
+                    "id": "sfdjsl3",
+                    "name": "Delete",
+                    "code": "<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n\/\/ sql to delete a record\r\n$sql = \"DELETE FROM MyGuests WHERE id=3\";\r\n\r\nif (mysqli_query($conn, $sql)) {\r\n  echo \"Record deleted successfully\";\r\n} else {\r\n  echo \"Error deleting record: \" . mysqli_error($conn);\r\n}\r\n\r\nmysqli_close($conn);\r\n?>",
+                    "description": ""
                 }
             ]
         },
         {
-            "category-name": "Working",
+            "category-name": "Setups",
             "sub-list": [
                 {
                     "id": "sfdjsl1",
-                    "name": "Importing components ",
-                    "code": "import Todos from './components/Todos';\n\n //in the render method \n<Todos \/>;",
-                    "description": "\nReplace Todos with class name \n If you change the path where \ncomponents are stored please update accordingly\n while using it in the render method please use tags like <Todos />"
+                    "name": "Routing",
+                    "code": "https://github.com/azeemhassni/simplest-php-router\n\n# Gist for setting up .htaccess\n\nhttps://gist.github.com/azeemhassni/e819e014a80bba5c8cf9429d120a45ac \n\nhttps://www.taniarascia.com/the-simplest-php-router/ \n\n",
+                    "description": ""
                 },
                 {
                     "id": "sfdjsl2",
@@ -44,52 +56,6 @@
                     "name": "Saving variables in State",
                     "code": "state = {\r\n    todos: []\r\n};",
                     "description": "Inside the Render method there is a method called State. Declare your variables there."
-                }
-            ]
-        },
-        {
-            "category-name": "Data processing",
-            "sub-list": [
-                {
-                    "id": "sfdjsl1",
-                    "name": "For each loop substitute",
-                    "code": " return this.props.todos.map((todo) => (\r\n      <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} delTodo={this.props.delTodo} \/>\r\n ));",
-                    "description": " There saf lskdjf sdjrkejkerj1"
-                },
-                {
-                    "id": "sfdjsl2",
-                    "name": "Filtering array based on condition",
-                    "code": "this.setState({\r\n        todos: [...this.state.todos.filter(todo => todo.id !== id)]\r\n})",
-                    "description": " There saf lskdjf sdjrkejkerj2"
-                },
-                {
-                    "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
-                    "description": " There saf lskdjf sdjrkejkerj3"
-                }
-            ]
-        },
-        {
-            "category-name": "Styling",
-            "sub-list": [
-                {
-                    "id": "sfdjsl1",
-                    "name": "Styling",
-                    "code": "  getStyle = () => {\r\n    return {\r\n      background: \"#f4f4f4\",\r\n      padding: \"10px\",\r\n      borderBottom: \"1px #ccc dotted\",\r\n      textDecoration: this.props.todo.completed ? \"line-through\" : \"none\",\r\n    };\r\n  };\r\n\r\n    <div style={this.getStyle()}>",
-                    "description": "Commands \n\n Generate class based component : \"RCE\""
-                },
-                {
-                    "id": "sfdjsl2",
-                    "name": "Add Bootstrap",
-                    "code": "1.run commnad in cmd\r\nnpm install bootstrap --save\r\n\r\n2.after install add this to index.js\r\nimport 'bootstrap\/dist\/css\/bootstrap.min.css';",
-                    "description": " There saf lskdjf sdjrkejkerj2"
-                },
-                {
-                    "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
-                    "description": " There saf lskdjf sdjrkejkerj3"
                 }
             ]
         }

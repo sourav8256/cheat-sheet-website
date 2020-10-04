@@ -1,0 +1,16 @@
+{
+    "title": "Nodejs",
+    "data": [
+        {
+            "category-name": "Socket",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Setup",
+                    "code": "<!-- frontend -->\r\n< script src=\"https:\/\/cdn.socket.io\/socket.io-1.2.0.js\">\r\n<\/script>\r\n\r\n  <script>\r\n    $(function () {\r\n      var socket = io();\r\n      $('form').submit(function () {\r\n        socket.emit('chat message', $('#m').val());\r\n        $('#m').val('');\r\n        return false;\r\n      });\r\n      socket.on('chat message', function (msg) {\r\n        $('#messages').append($('<li>').text(msg));\r\n        window.scrollTo(0, document.body.scrollHeight);\r\n      });\r\n    });\r\n  <\/script>\r\n\r\n<!-- backend -->\r\n\r\n\r\nnpm install socket.io\r\n  \r\nvar app = require('express')();\r\nvar http = require('http').Server(app);\r\nvar io = require('socket.io')(http);\r\nvar port = process.env.PORT || 3000;\r\n\r\napp.get('\/', function(req, res){\r\n  res.sendFile(__dirname + '\/index.html');\r\n});\r\n\r\nio.on('connection', function(socket){\r\n  socket.on('chat message', function(msg){\r\n    io.emit('chat message', msg);\r\n  });\r\n});\r\n\r\nhttp.listen(port, function(){\r\n  console.log('listening on *:' + port);\r\n});",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}
