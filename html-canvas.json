@@ -65,7 +65,7 @@
                 {
                     "id": "sfdjsl2",
                     "name": "Key press events",
-                    "code": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\" style=\"background:green\"><\/canvas>\r\n<script type=\"text\/javascript\">\r\nwindow.addEventListener('keydown',this.check,false);\r\n\r\nfunction check(e) {\r\n    alert(e.keyCode);\r\n}\r\n<\/script>",
+                    "code": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\" style=\"background:green\"><\/canvas>\r\n<script type=\"text\/javascript\">\r\nwindow.addEventListener('keydown',this.check,false);\r\n\r\nfunction check(e) {\r\n    alert(e.keyCode);\r\n}\r\n<\/script>\n\n\nkeydown\r\nFires when the user depresses a key. It repeats while the user keeps the key depressed.\r\nkeypress\r\nFires when an actual character is being inserted in, for instance, a text input. It repeats while the user keeps the key depressed.\r\nkeyup\r\nFires when the user releases a key, after the default action of that key has been performed.\r\ntextinput\r\nFires when a character is actually added to a control. So if the user presses a character key, but the default is prevented onkeydown or onkeypress, the textinput event does not fire since the sequence does not result in a character being added.",
                     "description": "Get key codes at this website https://keycode.info/"
                 },
                 {
@@ -141,6 +141,17 @@
                     "name": "Filtering array based on condition[requires ES6]",
                     "code": "this.setState({\r\n        todos: [...this.state.todos.filter(todo => todo.id !== id)]\r\n})",
                     "description": " There saf lskdjf sdjrkejkerj2"
+                }
+            ]
+        },
+        {
+            "category-name": "Uncategorized",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Export to image",
+                    "code": "var canvas = document.getElementById(\"mycanvas\");\r\nvar img    = canvas.toDataURL(\"image\/png\");\r\n\r\ndocument.write('<img src=\"'+img+'\"\/>');",
+                    "description": ""
                 }
             ]
         }
