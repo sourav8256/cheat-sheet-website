@@ -6,7 +6,7 @@
             "sub-list": [
                 {
                     "id": "sfdjsl1",
-                    "name": "<a href=\"/?content=angular\">Angular</a>",
+                    "name": "<a href=\"?content=angular\">Angular</a>",
                     "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
                     "description": ""
                 }
