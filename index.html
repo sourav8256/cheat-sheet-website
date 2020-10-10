@@ -37,12 +37,12 @@
       max-height: 40%;
     }
 
-    #therow{
-    width: auto;
-    overflow: auto;
-    max-height: 600px;
-    background-color: blue;
-}
+    #therow {
+      width: auto;
+      overflow: auto;
+      max-height: 600px;
+      background-color: blue;
+    }
   </style>
 
   <title>Document</title>
@@ -103,7 +103,7 @@
             <!-- </iframe> -->
           </div>
         </div>
-  
+
       </div>
 
       <button id="example-panel-close-btn" class='btn btn-success cross-btn'>
@@ -151,16 +151,19 @@
 
     var getContent = function (href) {
       var url = new URL(href);
-var c = url.searchParams.get("content");
-console.log(c);
-return c;
+      var c = url.searchParams.get("content");
+      console.log(c);
+      if(c == null){
+        return "index";
+      }
+      return c;
     };
 
     function loadData() {
       var content = "";
 
       axios
-        .get(getContent(window.location.href)+'.json')
+        .get(getContent(window.location.href) + '.json')
         .then(({ data }) => {
           $('#heading').html(data.title)
           mainData = data.data;
