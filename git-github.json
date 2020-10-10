@@ -1,0 +1,16 @@
+{
+    "title": "Git Github - Cheatsheet",
+    "data": [
+        {
+            "category-name": "Github Website",
+            "sub-list": [
+                {
+                    "id": "Create website in github",
+                    "name": "Installation",
+                    "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}
