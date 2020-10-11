@@ -5,9 +5,9 @@
             "category-name": "Github Website",
             "sub-list": [
                 {
-                    "id": "Create website in github",
-                    "name": "Installation",
-                    "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+                    "id": "werrwe",
+                    "name": "Create website in github",
+                    "code": "Repository > Settings > Github Pages > Source < Theme Chooser\n(Theme chooser is important although irrelevent in some cases)",
                     "description": ""
                 }
             ]

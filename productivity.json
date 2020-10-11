@@ -11,6 +11,17 @@
                     "description": ""
                 }
             ]
+        },
+        {
+            "category-name": "Thinking",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Techniques",
+                    "code": "\n\nScribbling\n\n",
+                    "description": ""
+                }
+            ]
         }
     ]
 }

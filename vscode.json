@@ -1,0 +1,28 @@
+{
+    "title": "VS Code - Cheat sheet",
+    "data": [
+        {
+            "category-name": "Rest api testing",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Requirements",
+                    "code": "\n\nshould end with .rest extension\n\n\nMultiple requests need to be seperated by \"###\" in a new line",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "POST",
+                    "code": "POST https:\/\/tuitiontripura.000webhostapp.com\/api\/registration.php HTTP\/1.1\r\ncontent-type: application\/json\r\n\r\n{\r\n    \"name\": \"sample\",\r\n    \"time\": \"Wed, 21 Oct 2015 18:27:50 GMT\"\r\n}",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "GET",
+                    "code": "GET https://example.com/comments/1 HTTP/1.1",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}

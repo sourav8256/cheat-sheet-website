@@ -2,6 +2,23 @@
     "title": "PHP - CheatSheet",
     "data": [
         {
+            "category-name": "Setup",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Free hostings",
+                    "code": "List follows\n\nhttps://in.000webhost.com/",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Routing",
+                    "code": "https://github.com/azeemhassni/simplest-php-router\n\n# Gist for setting up .htaccess\n\nhttps://gist.github.com/azeemhassni/e819e014a80bba5c8cf9429d120a45ac \n\nhttps://www.taniarascia.com/the-simplest-php-router/ \n\n",
+                    "description": ""
+                }
+            ]
+        },
+        {
             "category-name": "MySql Database (Procedural)",
             "sub-list": [
                 {
@@ -20,13 +37,13 @@
                     "id": "sfdjsl2",
                     "name": "Select statement",
                     "code": "<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"SELECT id, firstname, lastname FROM MyGuests\";\r\n$result = mysqli_query($conn, $sql);\r\n\r\nif (mysqli_num_rows($result) > 0) {\r\n  \/\/ output data of each row\r\n  while($row = mysqli_fetch_assoc($result)) {\r\n    echo \"id: \" . $row[\"id\"]. \" - Name: \" . $row[\"firstname\"]. \" \" . $row[\"lastname\"]. \"<br>\";\r\n  }\r\n} else {\r\n  echo \"0 results\";\r\n}\r\n\r\nmysqli_close($conn);\r\n?>",
-                    "description": " There saf lskdjf sdjrkejkerj2"
+                    "description": ""
                 },
                 {
                     "id": "sfdjsl3",
                     "name": "Update",
                     "code": "<?php\r\n$servername = \"localhost\";\r\n$username = \"username\";\r\n$password = \"password\";\r\n$dbname = \"myDB\";\r\n\r\n\/\/ Create connection\r\n$conn = mysqli_connect($servername, $username, $password, $dbname);\r\n\/\/ Check connection\r\nif (!$conn) {\r\n  die(\"Connection failed: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"UPDATE MyGuests SET lastname='Doe' WHERE id=2\";\r\n\r\nif (mysqli_query($conn, $sql)) {\r\n  echo \"Record updated successfully\";\r\n} else {\r\n  echo \"Error updating record: \" . mysqli_error($conn);\r\n}\r\n\r\nmysqli_close($conn);\r\n?>",
-                    "description": " There saf lskdjf sdjrkejkerj3"
+                    "description": ""
                 },
                 {
                     "id": "sfdjsl3",
@@ -37,25 +54,53 @@
             ]
         },
         {
-            "category-name": "Setups",
+            "category-name": "Data Transfer",
             "sub-list": [
                 {
                     "id": "sfdjsl1",
-                    "name": "Routing",
-                    "code": "https://github.com/azeemhassni/simplest-php-router\n\n# Gist for setting up .htaccess\n\nhttps://gist.github.com/azeemhassni/e819e014a80bba5c8cf9429d120a45ac \n\nhttps://www.taniarascia.com/the-simplest-php-router/ \n\n",
+                    "name": "POST",
+                    "code": "<?php\r\nif ($_SERVER[\"REQUEST_METHOD\"] == \"POST\") {\r\n  \/\/ do logic\r\n  $name = $_POST['fname'];\r\n}\r\n?>",
                     "description": ""
                 },
                 {
-                    "id": "sfdjsl2",
-                    "name": "Passing props",
-                    "code": "<Todos\r\n         todos={this.state.todos}\r\n         markComplete={this.markComplete}\r\n         delTodo={this.delTodo}\r\n \/>;\n\n //This can be accessed in the called componenet using \nthis.props.todos",
-                    "description": " There saf lskdjf sdjrkejkerj2"
+                    "id": "sfdjsl1",
+                    "name": "GET",
+                    "code": "<?php\r\nif(isset($_GET['name'])){\r\necho htmlentities($_GET['name']);\r\n\/\/or\r\n\/\/$name = htmlentities($_GET['name']);\r\n\/\/echo $name\r\nprint_r($_GET);\r\n}\r\n?>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Form",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Validation",
+                    "code": "Email validation\n\n<?php\r\n\r\nfunction valid_email($str) {\r\nreturn (!preg_match(\"\/^([a-z0-9\\+_\\-]+)(\\.[a-z0-9\\+_\\-]+)*@([a-z0-9\\-]+\\.)+[a-z]{2,6}$\/ix\", $str)) ? FALSE : TRUE;\r\n}\r\n\r\nif(!valid_email(\"test@example.com\")){\r\necho \"Invalid email address.\";\r\n}else{\r\necho \"Valid email address.\";\r\n}\r\n\r\n?>",
+                    "description": ""
                 },
                 {
-                    "id": "sfdjsl3\r\n",
-                    "name": "Saving variables in State",
-                    "code": "state = {\r\n    todos: []\r\n};",
-                    "description": "Inside the Render method there is a method called State. Declare your variables there."
+                    "id": "sfdjsl1",
+                    "name": "GET",
+                    "code": "<?php\r\nif(isset($_GET['name'])){\r\necho htmlentities($_GET['name']);\r\n\/\/or\r\n\/\/$name = htmlentities($_GET['name']);\r\n\/\/echo $name\r\nprint_r($_GET);\r\n}\r\n?>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Array",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Array to json",
+                    "code": "\/\/Json Encode\r\n\r\n$person = array( \r\n    \"name\" => \"KINGASV\", \r\n    \"title\" => \"CTO\"\r\n); \r\n\r\n\r\nheader('Content-type: application\/json');\r\n$personJSON=json_encode($person);\/\/returns JSON string\r\n\r\n\/\/Json Decode\r\n\r\n$personJSON = '{\"name\":\"KINGASV\",\"title\":\"CTO\"}';\r\n\r\n$person = json_decode($personJSON);\r\n\r\necho $person->name; \/\/ KINGASV",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Append",
+                    "code": "array_push($cart, 13);\n\n<?php\r\n$array[] = $var;\r\n?>",
+                    "description": ""
                 }
             ]
         }

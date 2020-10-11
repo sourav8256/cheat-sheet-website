@@ -9,18 +9,6 @@
                     "name": "Installation",
                     "code": "npx create-react-app my-app\r\ncd my-app\r\nnpm start",
                     "description": "First subcategory description"
-                },
-                {
-                    "id": "sfdjsl2",
-                    "name": "First sub category2",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl2",
-                    "description": " There saf lskdjf sdjrkejkerj2"
-                },
-                {
-                    "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
-                    "description": " There saf lskdjf sdjrkejkerj3"
                 }
             ]
         },
@@ -61,12 +49,6 @@
                     "name": "Filtering array based on condition",
                     "code": "this.setState({\r\n        todos: [...this.state.todos.filter(todo => todo.id !== id)]\r\n})",
                     "description": " There saf lskdjf sdjrkejkerj2"
-                },
-                {
-                    "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
-                    "description": " There saf lskdjf sdjrkejkerj3"
                 }
             ]
         },
@@ -77,19 +59,43 @@
                     "id": "sfdjsl1",
                     "name": "Styling",
                     "code": "  getStyle = () => {\r\n    return {\r\n      background: \"#f4f4f4\",\r\n      padding: \"10px\",\r\n      borderBottom: \"1px #ccc dotted\",\r\n      textDecoration: this.props.todo.completed ? \"line-through\" : \"none\",\r\n    };\r\n  };\r\n\r\n    <div style={this.getStyle()}>",
-                    "description": "Commands \n\n Generate class based component : \"RCE\""
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Adding classes",
+                    "code": "To add classes in react application \n\nJust add className as attribute instead of class\n\nExample #1[direct]\n\n<div className=\"col-sm-4 col-sm-offset-4\">\n\nExample #2[conditional]\n\n<div className={ this.state.active? \"bg-light light-on\": \"bg-light light-off\" } />\n\nExample #3[variables]\n\n<div className={variableContainingClassAsAString} />",
+                    "description": ""
                 },
                 {
                     "id": "sfdjsl2",
                     "name": "Add Bootstrap",
                     "code": "1.run commnad in cmd\r\nnpm install bootstrap --save\r\n\r\n2.after install add this to index.js\r\nimport 'bootstrap\/dist\/css\/bootstrap.min.css';",
-                    "description": " There saf lskdjf sdjrkejkerj2"
+                    "description": ""
+                }
+            ]
+        },
+        ,
+        {
+            "category-name": "Html vs React",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Migration",
+                    "code": "#1 Move all of the folders (css/, fonts/, img/, js/) to my-reactapp/public folder \n\n#2 Copy content of index.html of Html to index.html of React(present in the public folder)\n\n#3\n\nReference : https://medium.com/javascript-in-plain-english/how-to-convert-any-web-page-to-reactjs-9740f1ba15db",
+                    "description": ""
                 },
                 {
-                    "id": "sfdjsl3",
-                    "name": "First sub category3",
-                    "code": "lsdfjdsl sdfjskdljf lsdjfl3",
-                    "description": " There saf lskdjf sdjrkejkerj3"
+                    "id": "sfdjsl1",
+                    "name": "Adding classes",
+                    "code": "To add classes in react application \n\nJust add className as attribute instead of class\n\nExample #1[direct]\n\n<div className=\"col-sm-4 col-sm-offset-4\">\n\nExample #2[conditional]\n\n<div className={ this.state.active? \"bg-light light-on\": \"bg-light light-off\" } />\n\nExample #3[variables]\n\n<div className={variableContainingClassAsAString} />",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl2",
+                    "name": "Add Bootstrap",
+                    "code": "1.run commnad in cmd\r\nnpm install bootstrap --save\r\n\r\n2.after install add this to index.js\r\nimport 'bootstrap\/dist\/css\/bootstrap.min.css';",
+                    "description": ""
                 }
             ]
         }
