@@ -75,26 +75,13 @@
                 }
             ]
         },
-        ,
         {
             "category-name": "Html vs React",
             "sub-list": [
                 {
                     "id": "sfdjsl1",
                     "name": "Migration",
-                    "code": "#1 Move all of the folders (css/, fonts/, img/, js/) to my-reactapp/public folder \n\n#2 Copy content of index.html of Html to index.html of React(present in the public folder)\n\n#3\n\nReference : https://medium.com/javascript-in-plain-english/how-to-convert-any-web-page-to-reactjs-9740f1ba15db",
-                    "description": ""
-                },
-                {
-                    "id": "sfdjsl1",
-                    "name": "Adding classes",
-                    "code": "To add classes in react application \n\nJust add className as attribute instead of class\n\nExample #1[direct]\n\n<div className=\"col-sm-4 col-sm-offset-4\">\n\nExample #2[conditional]\n\n<div className={ this.state.active? \"bg-light light-on\": \"bg-light light-off\" } />\n\nExample #3[variables]\n\n<div className={variableContainingClassAsAString} />",
-                    "description": ""
-                },
-                {
-                    "id": "sfdjsl2",
-                    "name": "Add Bootstrap",
-                    "code": "1.run commnad in cmd\r\nnpm install bootstrap --save\r\n\r\n2.after install add this to index.js\r\nimport 'bootstrap\/dist\/css\/bootstrap.min.css';",
+                    "code": "1. Move all of the folders (css/, fonts/, img/, js/) to my-reactapp/public folder \n\n2. Copy content of index.html of Html to index.html of React(present in the public folder)\n\n3. Change class to className(with camel toe)\n\nReference : https://medium.com/javascript-in-plain-english/how-to-convert-any-web-page-to-reactjs-9740f1ba15db",
                     "description": ""
                 }
             ]
