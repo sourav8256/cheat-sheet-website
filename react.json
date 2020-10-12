@@ -8,7 +8,7 @@
                     "id": "sfdjsl1",
                     "name": "Installation",
                     "code": "npx create-react-app my-app\r\ncd my-app\r\nnpm start",
-                    "description": "First subcategory description"
+                    "description": ""
                 }
             ]
         },
