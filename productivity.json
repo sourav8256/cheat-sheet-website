@@ -22,6 +22,29 @@
                     "description": ""
                 }
             ]
+        },
+        {
+            "category-name": "Getting through booring work",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Reward",
+                    "code": "\n\nReward after doing certain amount of work. 9gag or netflix/tv\n\n",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Reading a book parallely",
+                    "code": "",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Listening to podcast or BBC",
+                    "code": "",
+                    "description": ""
+                }
+            ]
         }
     ]
 }
