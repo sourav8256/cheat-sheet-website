@@ -5,15 +5,38 @@
             "category-name": "Getting Started",
             "sub-list": [
                 {
-                    "id": "sfdjsl1",
-                    "name": "Installing Jupiter Notebook",
-                    "code": "pip install jupyter\r\n\r\n\/\/ run using the command\r\n\r\njupyter notebook\r\n\r\n\/\/ incase the above command doesn't work you can run the notebook using\r\n\r\npy -m notebook",
-                    "description": ""
-                },
-                {
                     "id": "sfdjsl2",
                     "name": "Start drawing in canvas",
                     "code": "<script>\r\nvar c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.moveTo(0, 0);\r\nctx.lineTo(200, 100);\r\nctx.stroke();\r\n</script>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "HTML Elements",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Form elements",
+                    "code": "## Text\r\n\r\n<input type=\"text\" class=\"inputtext\" placeholder=\"...\" id=\"text1\">\r\n\r\ndocument.getElementById(\"myText\").value = \"Johnny Bravo\";\r\n\r\n## Select(list)\r\n\r\n<!-- Answer to: \"html drop down list\" -->\r\n\r\n<label for=\"items\">Choose an item:<\/label>\r\n\r\n<!-- The value for `for=\"\"` and `id=\"\"` has to be same. -->\r\n\r\n<select id=\"items\">\r\n  <option value=\"item-1\">Item 1<\/option>\r\n  <option value=\"item-2\">Item 2<\/option>\r\n  <option value=\"item-3\">Item 3<\/option>\r\n  <option value=\"item-4\">Item 4<\/option>\r\n<\/select>\r\n\r\nvar e = document.getElementById(\"elementId\");\r\nvar value = e.options[e.selectedIndex].value;\r\nvar text = e.options[e.selectedIndex].text;\r\n\r\n## Checkbox\r\n\r\n<input type=\"checkbox\" name=\"vehicle1\" value=\"Bike\"> I have a bike<br>\r\n<input type=\"checkbox\" name=\"vehicle2\" value=\"Car\"> I have a car<br>\r\n<input type=\"checkbox\" name=\"vehicle3\" value=\"Boat\" checked> I have a boat<br>\r\n\r\ndocument.getElementById(\"checkbox\").checked;\r\n\r\n\/\/ Check\r\ndocument.getElementById(\"checkbox\").checked = true;\r\n\r\n\/\/ Uncheck\r\ndocument.getElementById(\"checkbox\").checked = false;\r\n\r\n## Button\r\n\r\n<button type=\"button\" onclick=\"alert('You pressed the button!')\">Click me!<\/button>\r\n\r\ndocument.getElementById(\"myBtn\").addEventListener(\"click\", function(){\r\n    document.getElementById(\"demo\").innerHTML = \"Hello World\";\r\n}); ",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "External Css",
+                    "code": "\r\n<script src=\"https:\/\/unpkg.com\/axios\/dist\/axios.min.js\"><\/script>\r\n\r\naxios\r\n  .get(\"url\")\r\n  .then(({ data }) => {\r\n    mainData = data.data;\r\n\r\n\r\n  })\r\n  .catch((err) => {\r\n    console.log(err);\r\n  })",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "External Javascript",
+                    "code": "function randomString(length, chars) {\r\n    var result = '';\r\n    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];\r\n    return result;\r\n}\r\ndocument.write(randomString(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));",
+                    "description": "The second two arguments are the X and Y position"
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Custom fonts",
+                    "code": "Normal font from a file\r\n\r\n@font-face {\r\n  font-family: myFirstFont;\r\n  src: url(sansation_light.woff);\r\n}\r\n\r\ndiv {\r\n  font-family: myFirstFont;\r\n}\r\n\r\n\r\n<div>With CSS, websites can finally use fonts other than the pre selected \"web-safe\" fonts.<\/div>\r\n\r\n\r\nFor adding google fonts to htmls\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<link href='https:\/\/fonts.googleapis.com\/css?family=Finger Paint' rel='stylesheet'>\r\n<style>\r\nbody {\r\n    font-family: 'Finger Paint';font-size: 22px;\r\n}\r\n<\/style>\r\n<\/head>\r\n\r\nFrom css page\r\n\r\n@import url('https:\/\/fonts.googleapis.com\/css?family=Open+Sans&display=swap');\r\n\r\n\r\n",
                     "description": ""
                 }
             ]

@@ -43,6 +43,24 @@
                     "name": "Listening to podcast or BBC",
                     "code": "",
                     "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Jobs per time",
+                    "code": "How many jobs you can do in a time interval say 1 hour.",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Listening to songs",
+                    "code": "Listening to songs work when nothing else seems to work. (but in limited number)",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Toothpick chewing",
+                    "code": "Put a tooth pick in mouth. It works.",
+                    "description": ""
                 }
             ]
         }
