@@ -13,13 +13,24 @@
                 {
                     "id": "sfdjsl1",
                     "name": "POST",
-                    "code": "POST https:\/\/tuitiontripura.000webhostapp.com\/api\/registration.php HTTP\/1.1\r\ncontent-type: application\/json\r\n\r\n{\r\n    \"name\": \"sample\",\r\n    \"time\": \"Wed, 21 Oct 2015 18:27:50 GMT\"\r\n}",
+                    "code": "POST https:\/\/tuitiontripura.000webhostapp.com\/api\/registration.php HTTP\/1.1\r\ncontent-type: application\/json\r\n\r\n{\r\n    \"name\": \"sample\",\r\n    \"time\": \"Wed, 21 Oct 2015 18:27:50 GMT\"\r\n}\n\nfor form data\n\nContent-Type: application/x-www-form-urlencoded\n\nname='sample'&email='email@email.com'",
                     "description": ""
                 },
                 {
                     "id": "sfdjsl1",
                     "name": "GET",
                     "code": "GET https://example.com/comments/1 HTTP/1.1",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Multiline edit",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Edit all in selection",
+                    "code": "Cmd+Shift+L or Cmd+Ctrl+G on Mac",
                     "description": ""
                 }
             ]

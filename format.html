@@ -1,42 +1,47 @@
-<!-- frontend -->
-< script src="https://cdn.socket.io/socket.io-1.2.0.js">
-</script>
-
-  <script>
-    $(function () {
-      var socket = io();
-      $('form').submit(function () {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function (msg) {
-        $('#messages').append($('<li>').text(msg));
-        window.scrollTo(0, document.body.scrollHeight);
-      });
-    });
-  </script>
-
-<!-- backend -->
 
 
-npm install socket.io
-  
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 3000;
+<div class="container">
+  <div class="left"></div>
+  <div class="center"></div>
+  <div class="right"></div>
+</div>
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+#solution one
 
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+.container{
+  text-align:center
+}
+.container > div {
+  width: 150px;
+  height: 150px;
+  background: red;
+}
+
+.left{
+  float: left;
+}
+
+.center{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.right{
+  float: right;
+}
+
+
+#solution two
+
+.container > div {
+  width: 150px;
+  height: 150px;
+  background: red;
+  border: 1px solid red;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}

@@ -67,6 +67,45 @@
                     "name": "GET",
                     "code": "<?php\r\nif(isset($_GET['name'])){\r\necho htmlentities($_GET['name']);\r\n\/\/or\r\n\/\/$name = htmlentities($_GET['name']);\r\n\/\/echo $name\r\nprint_r($_GET);\r\n}\r\n?>",
                     "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Preventing MySql injection",
+                    "code": "\/\/Connect\r\n$unsafe_variable = $_POST[\"user-input\"];\r\n$safe_variable = mysqli_real_escape_string($conn,$unsafe_variable);\r\n\r\nmysql_query(\"INSERT INTO table (column) VALUES ('\" . $safe_variable . \"')\");\r\n\/\/Disconnect",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "As a webserver",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Sessions",
+                    "code": "<?php\r\n\/\/ Start the session\r\nsession_start();\r\n?>\r\n<!DOCTYPE html>\r\n<html>\r\n<body>\r\n\r\n<?php\r\n\/\/ Set session variables\r\n$_SESSION[\"favcolor\"] = \"green\";\r\n$_SESSION[\"favanimal\"] = \"cat\";\r\necho \"Session variables are set.\";\r\n\r\n\r\n\/\/ remove all session variables\r\nsession_unset();\r\n\r\n\/\/ destroy the session\r\nsession_destroy();\r\n\r\n?>\r\n\r\n<\/body>\r\n<\/html>",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "File System",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "importing",
+                    "code": "require_once(\"connection.php\");",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Null Checker",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Empty variable",
+                    "code": "<?php\r\nif (isset($_POST['var']) && !empty($_POST['var'])) {\r\n    echo $_POST['var'];\r\n}\r\nelse {\r\n    echo 'Please ensure you have entered your details';\r\n}\r\n?> \n\n\nfunction check_null($var)\r\n{\r\n\r\n  if (isset($var) && !empty($var)) {\r\n    echo $var;\r\n    return $var;\r\n  } else {\r\n    die('Please ensure you have entered your details');\r\n  }\r\n}",
+                    "description": ""
                 }
             ]
         },
