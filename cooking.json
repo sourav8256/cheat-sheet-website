@@ -1,0 +1,16 @@
+{
+    "title": "Cooking",
+    "data": [
+        {
+            "category-name": "Snacks",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Dry Maggi",
+                    "code": "",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}
