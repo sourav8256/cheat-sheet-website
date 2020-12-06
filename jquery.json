@@ -1,24 +1,13 @@
 {
-    "title": "Boilerplate",
+    "title": "Jquery",
     "data": [
-        {
-            "category-name": "Form",
-            "sub-list": [
-                {
-                    "id": "sfdjsl1",
-                    "name": "Getting values from fields",
-                    "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
-                    "description": ""
-                }
-            ]
-        },
         {
             "category-name": "Getting Started",
             "sub-list": [
                 {
                     "id": "sfdjsl1",
                     "name": "Installation",
-                    "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+                    "code": "<!-- jQuery library -->\r\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n",
                     "description": ""
                 }
             ]

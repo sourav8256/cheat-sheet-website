@@ -1,13 +1,25 @@
 {
-    "title": "Boilerplate",
+    "title": "Bootstrap",
     "data": [
         {
             "category-name": "Getting Started",
             "sub-list": [
                 {
                     "id": "sfdjsl1",
+                    "name": "Installation",
+                    "code": "<!-- Latest compiled and minified CSS -->\r\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\r\n\r\n<!-- jQuery library -->\r\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n\r\n<!-- Popper JS -->\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js\"></script>\r\n\r\n<!-- Latest compiled JavaScript -->\r\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
                     "name": "Cheat sheet link",
-                    "code": "",
+                    "code": "https://hackerthemes.com/bootstrap-cheatsheet/",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Cheat sheet link",
+                    "code": "Bootstrap cheat-sheet : https://hackerthemes.com/bootstrap-cheatsheet/",
                     "description": ""
                 }
             ]
