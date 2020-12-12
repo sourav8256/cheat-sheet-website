@@ -77,7 +77,13 @@
                     "id": "sfdjsl1",
                     "name": "Line",
                     "code": "var c = document.getElementById(\"myCanvas\");\r\nvar ctx = c.getContext(\"2d\");\r\nctx.beginPath();\r\nctx.moveTo(0, 0);\r\nctx.lineTo(300, 150);\r\nctx.stroke();",
-                    "description": "rect(X,Y,Width,Height)"
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Interpolating variables",
+                    "code": "\r\nconst age = 3\r\nconsole.log(`I'm ${age} years old!`)",
+                    "description": ""
                 }
             ]
         }
