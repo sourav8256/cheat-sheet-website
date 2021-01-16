@@ -163,7 +163,7 @@
       var content = "";
 
       axios
-        .get(getContent(window.location.href) + '.json')
+        .get('content/'+getContent(window.location.href) + '.json')
         .then(({ data }) => {
           $('#heading').html(data.title)
           mainData = data.data;

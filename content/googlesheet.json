@@ -1,0 +1,39 @@
+{
+	"title" : "Google sheet - Cheatsheet",
+	"data" : [
+		{
+			"category-name" : "Columns",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Missing values in columns",
+					"code" : "FILTER(B3:B18,COUNTIF(A3:A19,B3:B18)=0)",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Join texts in column",
+					"code" : "=TEXTJOIN(&quot;, &quot;,TRUE,FILTER(B3:B18,COUNTIF(A3:A19,B3:B18)=0))",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Uncategorized",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Query",
+					"code" : "Select whole sheet and convert it to table by selecting Data > Named ranges…\n\n=QUERY(countries,\"SELECT B, D WHERE D > 100000000\",1)\nwhere countries is a named range and 1 is the number of header rows\n\nResource: https://www.benlcollins.com/spreadsheets/google-sheets-query-sql/\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "New category",
+					"code" : "Select whole sheet and convert it to table by selecting Data > Named ranges…\n\n=QUERY(countries,\"SELECT B, D WHERE D > 100000000\",1)\nwhere countries is a named range and 1 is the number of header rows\n\nResource: https://www.benlcollins.com/spreadsheets/google-sheets-query-sql/\r\n\r\nsjdflsajdf\r\n\r\n\r\nsadfhkjasdhf\r\n\r\n\r\n\r\n\r\nsdfhasdfhjsdhfjkshdfj",
+					"description" : ""
+				}
+			]
+		}
+	]
+}

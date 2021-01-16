@@ -206,4 +206,39 @@ app.use(function (req, res, next) {
  
 
 
- 
+ if # found
+    loop till next #
+        if ## found
+            loop till next ##
+                if ### found
+                    loop till next ###
+
+
+
+
+
+ if # found
+    set first index
+    concatenate all non index lines as values
+        if ## found
+            set second index
+            concatenate all non index lines as values
+                if ### found
+                    set third index
+                    concatenate all non index lines as values
+
+
+
+loop
+
+
+  if # found
+    set first index as index name set other index as null
+
+  if ## found
+    set second index and pop consecutive indexes
+
+  if ## found
+    set second index and pop consecutive indexes
+
+  if not an index

@@ -1,0 +1,47 @@
+{
+    "title": "Nodejs",
+    "data": [
+        {
+            "category-name": "Socket",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "Setup",
+                    "code": "\r\n\r\n\r\n< script src=\"https://cdn.socket.io/socket.io-1.2.0.js\">\r\n</script>\r\n \r\n  <script>\r\n    $(function () {\r\n      var socket = io(\"http://localhost:3000\");\r\n      $('form').submit(function () {\r\n        socket.emit('chat message', $('#m').val());\r\n        $('#m').val('');\r\n        return false;\r\n      });\r\n      socket.on('chat message', function (msg) {\r\n        $('#messages').append($('<li>').text(msg));\r\n        window.scrollTo(0, document.body.scrollHeight);\r\n      });\r\n    });\r\n  </script>\r\n\r\n\r\nsource of socket.io.js file should be from the server itself\r\n\r\nhttp://127.0.0.1:3000/socket.io/socket.io.js\r\n\r\nwhere http://127.0.0.1:3000 is the socket server.\r\n\r\n \r\n<!-- backend -->\r\n \r\n \r\nnpm install socket.io\r\n  \r\nvar app = require('express')();\r\nvar http = require('http').Server(app);\r\nvar io = require('socket.io')(http);\r\nvar port = process.env.PORT || 3000;\r\n \r\napp.get('/', function(req, res){\r\n  res.sendFile(__dirname + '/index.html');\r\n});\r\n \r\nio.on('connection', function(socket){\r\n  socket.on('chat message', function(msg){\r\n    io.emit('chat message', msg);\r\n  });\r\n});\r\n \r\nhttp.listen(port, function(){\r\n  console.log('listening on *:' + port);\r\n});\r\n\r\n\r\n\r\n\r\n\r\n\r\n//Sending broadcast to all/individual clients\r\n\r\nio.on('connection', function(socket){\r\n  socket.on('chat message', function(msg){\r\n    \r\n    // for sending broadcast to all clients\r\n    io.emit('chat message', \"response from socket\");\r\n\r\n    // for sending broadcast to the individual client that connecte\r\n    // save the clients in an array for future use\r\n    socket.emit('chat message', \"response from socket\");\r\n\r\n\r\n    console.log(\"the msg is\",msg);\r\n  });\r\n  //socket.emit(\"chat message\", \"socket emit\");\r\n  console.log(\"io connected\");\r\n});\r\n\r\n",
+                    "description": #jescape#fsjdlkjf
+                    sdfklsdj
+                    sdfjsdjkf#jescape#
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Adding headers in socket",
+                    "code": "var io = require('socket.io')(http,{\r\n    cors: {\r\n      origin: '*',\r\n      methods: [\"GET\", \"POST\"],\r\n    allowedHeaders: [\"my-custom-header\"],\r\n    credentials: true\r\n    }\r\n  });\r\n\r\n",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Rooms",
+                    "code": "io.on('connection', socket => {\r\n  socket.join('some room');\r\n});\r\n\r\n\r\nio.to('some room').emit('some event');\r\n\r\n\r\n// send to multiple rooms at once\r\nio.to('room1').to('room2').to('room3').emit('some event');\r\n\r\n\r\nio.on('connection', function(socket){\r\n  socket.to('some room').emit('some event');\r\n  //In that case, every socket in the room excluding the sender will get the event.\r\n});",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category-name": "Web Server",
+            "sub-list": [
+                {
+                    "id": "sfdjsl1",
+                    "name": "File Serving",
+                    "code": "app.get('/', function(req, res){\r\n  console.log(\"hit\");\r\n  res.sendFile(__dirname + '/index.html');\r\n});",
+                    "description": ""
+                },
+                {
+                    "id": "sfdjsl1",
+                    "name": "Access Control",
+                    "code": "\r\n// Add headers\r\napp.use(function (req, res, next) {\r\n\r\n    // Website you wish to allow to connect\r\n    res.setHeader('Access-Control-Allow-Origin', '*');\r\n\r\n    // Request methods you wish to allow\r\n    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');\r\n\r\n    // Request headers you wish to allow\r\n    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');\r\n\r\n    // Set to true if you need the website to include cookies in the requests sent\r\n    // to the API (e.g. in case you use sessions)\r\n    res.setHeader('Access-Control-Allow-Credentials', true);\r\n\r\n    // Pass to next layer of middleware\r\n    next();\r\n});\r\n ",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}
