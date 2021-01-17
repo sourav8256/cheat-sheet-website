@@ -1,16 +1,27 @@
 {
-    "title": "Android - CheatSheet",
-    "data": [
-        {
-            "category-name": "Getting Started",
-            "sub-list": [
-                {
-                    "id": "sfdjsl1",
-                    "name": "Installation",
-                    "code": "npm install -g @angular\/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
-                    "description": ""
-                }
-            ]
-        }
-    ]
+	"title" : "Android - CheatSheet",
+	"data" : [
+		{
+			"category-name" : "Getting Started",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Installation",
+					"code" : "npm install -g @angular/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Uncategorized",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Notification",
+					"code" : "source : https://developer.android.com/training/notify-user/build-notification#java\r\n\r\n\r\nNotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)\r\n        .setSmallIcon(R.drawable.notification_icon)\r\n        .setContentTitle(textTitle)\r\n        .setContentText(textContent)\r\n        .setPriority(NotificationCompat.PRIORITY_DEFAULT);\r\n\r\n\r\nNotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)\r\n        .setSmallIcon(R.drawable.notification_icon)\r\n        .setContentTitle(\"My notification\")\r\n        .setContentText(\"Much longer text that cannot fit one line...\")\r\n        .setStyle(new NotificationCompat.BigTextStyle()\r\n                .bigText(\"Much longer text that cannot fit one line...\"))\r\n        .setPriority(NotificationCompat.PRIORITY_DEFAULT);\r\n\r\n\r\n\r\nprivate void createNotificationChannel() {\r\n    // Create the NotificationChannel, but only on API 26+ because\r\n    // the NotificationChannel class is new and not in the support library\r\n    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {\r\n        CharSequence name = getString(R.string.channel_name);\r\n        String description = getString(R.string.channel_description);\r\n        int importance = NotificationManager.IMPORTANCE_DEFAULT;\r\n        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);\r\n        channel.setDescription(description);\r\n        // Register the channel with the system; you can't change the importance\r\n        // or other notification behaviors after this\r\n        NotificationManager notificationManager = getSystemService(NotificationManager.class);\r\n        notificationManager.createNotificationChannel(channel);\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n// Create an explicit intent for an Activity in your app\r\nIntent intent = new Intent(this, AlertDetails.class);\r\nintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);\r\nPendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);\r\n\r\nNotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)\r\n        .setSmallIcon(R.drawable.notification_icon)\r\n        .setContentTitle(\"My notification\")\r\n        .setContentText(\"Hello World!\")\r\n        .setPriority(NotificationCompat.PRIORITY_DEFAULT)\r\n        // Set the intent that will fire when the user taps the notification\r\n        .setContentIntent(pendingIntent)\r\n        .setAutoCancel(true);\r\n\r\n\r\n\r\n\r\n\r\n\r\nNotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);\r\n\r\n// notificationId is a unique int for each notification that you must define\r\nnotificationManager.notify(notificationId, builder.build());",
+					"description" : ""
+				}
+			]
+		}
+	]
 }
