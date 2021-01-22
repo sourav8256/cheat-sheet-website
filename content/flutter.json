@@ -1,0 +1,45 @@
+{
+	"title" : "Flutter",
+	"data" : [
+		{
+			"category-name" : "Components",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Installation",
+					"code" : "npm install -g @angular/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Scaffold",
+					"code" : "import 'package:flutter/material.dart';\r\nimport './app_screens/home.dart';\r\n\r\nvoid main() {\r\n  runApp(MaterialApp(\r\n\r\n\t  title: \"Exploring UI widgets\",\r\n\r\n\t  home: Scaffold(\r\n      appBar: AppBar(title: Text(\"Long List\"),),\r\n      body: getListView()\r\n    ),\r\n\r\n  ));\r\n}\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Listview",
+					"code" : "\r\n****** Multiple *****\r\n\r\nList<String> getListElements() {\r\n\r\n\tvar items = List<String>.generate(1000, (counter) => \"Item $counter\");\r\n\treturn items;\r\n}\r\n\r\nWidget getListView() {\r\n\r\n\tvar listItems = getListElements();\r\n\r\n\tvar listView = ListView.builder(\r\n\t\t\titemBuilder: (context, index) {\r\n\r\n\t\t\t\treturn ListTile(\r\n\t\t\t\t\tleading: Icon(Icons.arrow_right),\r\n\t\t\t\t\ttitle: Text(listItems[index]),\r\n\t\t\t\t\tonTap: () {\r\n\t\t\t\t\t\tdebugPrint('${listItems[index]} was tapped');\r\n\t\t\t\t\t},\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t);\r\n\r\n\treturn listView;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n****** Basic ***********\r\n\r\n\r\nWidget getListView() {\r\n\r\n  var listView = ListView(\r\n    children: <Widget>[\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.landscape),\r\n        title: Text(\"Landscape\"),\r\n        subtitle: Text(\"Beautiful View !\"),\r\n        trailing: Icon(Icons.wb_sunny),\r\n        onTap: () {\r\n          debugPrint(\"Landscape tapped\");\r\n        },\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.laptop_chromebook),\r\n        title: Text(\"Windows\"),\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.phone),\r\n        title: Text(\"Phone\"),\r\n      ),\r\n\r\n//      Text(\"Yet another element in List\"),\r\n\r\n//      Container(color: Colors.red, height: 50.0,)\r\n\r\n    ],\r\n  );",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Listview",
+					"code" : "\r\n****** Multiple *****\r\n\r\nList<String> getListElements() {\r\n\r\n\tvar items = List<String>.generate(1000, (counter) => \"Item $counter\");\r\n\treturn items;\r\n}\r\n\r\nWidget getListView() {\r\n\r\n\tvar listItems = getListElements();\r\n\r\n\tvar listView = ListView.builder(\r\n\t\t\titemBuilder: (context, index) {\r\n\r\n\t\t\t\treturn ListTile(\r\n\t\t\t\t\tleading: Icon(Icons.arrow_right),\r\n\t\t\t\t\ttitle: Text(listItems[index]),\r\n\t\t\t\t\tonTap: () {\r\n\t\t\t\t\t\tdebugPrint('${listItems[index]} was tapped');\r\n\t\t\t\t\t},\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t);\r\n\r\n\treturn listView;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n****** Basic ***********\r\n\r\n\r\nWidget getListView() {\r\n\r\n  var listView = ListView(\r\n    children: <Widget>[\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.landscape),\r\n        title: Text(\"Landscape\"),\r\n        subtitle: Text(\"Beautiful View !\"),\r\n        trailing: Icon(Icons.wb_sunny),\r\n        onTap: () {\r\n          debugPrint(\"Landscape tapped\");\r\n        },\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.laptop_chromebook),\r\n        title: Text(\"Windows\"),\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.phone),\r\n        title: Text(\"Phone\"),\r\n      ),\r\n\r\n//      Text(\"Yet another element in List\"),\r\n\r\n//      Container(color: Colors.red, height: 50.0,)\r\n\r\n    ],\r\n  );",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Pages",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Basic flutter app page",
+					"code" : "// Copyright 2018 The Flutter team. All rights reserved.\r\n// Use of this source code is governed by a BSD-style license that can be\r\n// found in the LICENSE file.\r\n\r\nimport 'package:flutter/material.dart';\r\n\r\nvoid main() => runApp(MyApp());\r\n\r\nclass MyApp extends StatelessWidget {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp(\r\n      title: 'Welcome to Flutter',\r\n      home: Scaffold(\r\n        appBar: AppBar(\r\n          title: Text('Welcome to Flutter'),\r\n        ),\r\n        body: Center(\r\n          child: Text('Hello World'),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}",
+					"description" : ""
+				}
+			]
+		}
+	]
+}

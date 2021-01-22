@@ -1,0 +1,22 @@
+{
+	"title" : "WP-Interface",
+	"data" : [
+		{
+			"category-name" : "Getting Started",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Installation",
+					"code" : "npm install -g @angular/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Shopping Website",
+					"code" : "1. Login\r\n\r\n2. Installing a theme\r\n\r\ntheme name : Astra\r\n\r\nto import the sample site : Astra Options > Import startup site > see Library > Elementor > ecommerce > choose site Brandstore > Install plugins > Import the site\r\n\r\n\r\n3.\r\n\r\nDelete all products\r\n\r\n Dashboard > Products > select all products > Move to trash > Apply\r\n\r\nAdd new product\r\n\r\nProducts > Add new\r\n\r\n\r\n\r\n",
+					"description" : ""
+				}
+			]
+		}
+	]
+}
