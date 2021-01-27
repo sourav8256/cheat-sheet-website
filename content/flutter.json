@@ -2,30 +2,51 @@
 	"title" : "Flutter",
 	"data" : [
 		{
-			"category-name" : "Components",
+			"category-name" : "Getting Started",
 			"sub-list" : [
 				{
 					"id" : "sfdjsl1",
-					"name" : "Installation",
-					"code" : "npm install -g @angular/cli\r\nng new my-dream-app\r\ncd my-dream-app\r\nng serve",
+					"name" : "Main widgets",
+					"code" : "\r\nStateless widget *****************\r\n\r\n\r\nimport 'package:flutter/material.dart'; \r\n  \r\nvoid main() => runApp(MyApp()); \r\n  \r\nclass MyApp extends StatelessWidget { \r\n  @override \r\n  Widget build(BuildContext context) { \r\n    return Container(); \r\n  } \r\n} \r\n\r\n\r\n\r\n\r\nstateful widget ********************\r\n\r\n\r\nimport 'package:flutter/material.dart'; \r\n\r\nvoid main() => runApp(MyApp()); \r\n\r\nclass MyApp extends StatefulWidget { \r\n@override \r\n_MyAppState createState() => _MyAppState(); \r\n} \r\n\r\nclass _MyAppState extends State<MyApp> { \r\n@override \r\nWidget build(BuildContext context) { \r\n\treturn Container(); \r\n} \r\n} \r\n",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Shortcuts",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Android studio",
+					"code" : "Creating stateless and stateful widget template ***********************************\r\n\r\n\r\nstless\r\nstful",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Errors",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Emulator Crashing",
+					"code" : "1. Turn off launch in tool window for below api 30 (even in api 30 it gets slow)\r\n2. Make sure intel haxm is installed.\r\n3. Make sure android sdk platform tools is installed completely/updated.",
 					"description" : ""
 				},
 				{
 					"id" : "sfdjsl1",
-					"name" : "Scaffold",
-					"code" : "import 'package:flutter/material.dart';\r\nimport './app_screens/home.dart';\r\n\r\nvoid main() {\r\n  runApp(MaterialApp(\r\n\r\n\t  title: \"Exploring UI widgets\",\r\n\r\n\t  home: Scaffold(\r\n      appBar: AppBar(title: Text(\"Long List\"),),\r\n      body: getListView()\r\n    ),\r\n\r\n  ));\r\n}\r\n",
+					"name" : "Cannot connect to url",
+					"code" : "1. If the url is http: we need to include\r\n\r\nandroid:usesCleartextTraffic=\"true\"\r\n\r\n\r\n<application\r\n        android:name=\"yourName\"\r\n        android:label=\"yourLable\"\r\n        android:usesCleartextTraffic=\"true\"",
 					"description" : ""
-				},
+				}
+			]
+		},
+		{
+			"category-name" : "Permissions",
+			"sub-list" : [
 				{
 					"id" : "sfdjsl1",
-					"name" : "Listview",
-					"code" : "\r\n****** Multiple *****\r\n\r\nList<String> getListElements() {\r\n\r\n\tvar items = List<String>.generate(1000, (counter) => \"Item $counter\");\r\n\treturn items;\r\n}\r\n\r\nWidget getListView() {\r\n\r\n\tvar listItems = getListElements();\r\n\r\n\tvar listView = ListView.builder(\r\n\t\t\titemBuilder: (context, index) {\r\n\r\n\t\t\t\treturn ListTile(\r\n\t\t\t\t\tleading: Icon(Icons.arrow_right),\r\n\t\t\t\t\ttitle: Text(listItems[index]),\r\n\t\t\t\t\tonTap: () {\r\n\t\t\t\t\t\tdebugPrint('${listItems[index]} was tapped');\r\n\t\t\t\t\t},\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t);\r\n\r\n\treturn listView;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n****** Basic ***********\r\n\r\n\r\nWidget getListView() {\r\n\r\n  var listView = ListView(\r\n    children: <Widget>[\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.landscape),\r\n        title: Text(\"Landscape\"),\r\n        subtitle: Text(\"Beautiful View !\"),\r\n        trailing: Icon(Icons.wb_sunny),\r\n        onTap: () {\r\n          debugPrint(\"Landscape tapped\");\r\n        },\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.laptop_chromebook),\r\n        title: Text(\"Windows\"),\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.phone),\r\n        title: Text(\"Phone\"),\r\n      ),\r\n\r\n//      Text(\"Yet another element in List\"),\r\n\r\n//      Container(color: Colors.red, height: 50.0,)\r\n\r\n    ],\r\n  );",
-					"description" : ""
-				},
-				{
-					"id" : "sfdjsl1",
-					"name" : "Listview",
-					"code" : "\r\n****** Multiple *****\r\n\r\nList<String> getListElements() {\r\n\r\n\tvar items = List<String>.generate(1000, (counter) => \"Item $counter\");\r\n\treturn items;\r\n}\r\n\r\nWidget getListView() {\r\n\r\n\tvar listItems = getListElements();\r\n\r\n\tvar listView = ListView.builder(\r\n\t\t\titemBuilder: (context, index) {\r\n\r\n\t\t\t\treturn ListTile(\r\n\t\t\t\t\tleading: Icon(Icons.arrow_right),\r\n\t\t\t\t\ttitle: Text(listItems[index]),\r\n\t\t\t\t\tonTap: () {\r\n\t\t\t\t\t\tdebugPrint('${listItems[index]} was tapped');\r\n\t\t\t\t\t},\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t);\r\n\r\n\treturn listView;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n****** Basic ***********\r\n\r\n\r\nWidget getListView() {\r\n\r\n  var listView = ListView(\r\n    children: <Widget>[\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.landscape),\r\n        title: Text(\"Landscape\"),\r\n        subtitle: Text(\"Beautiful View !\"),\r\n        trailing: Icon(Icons.wb_sunny),\r\n        onTap: () {\r\n          debugPrint(\"Landscape tapped\");\r\n        },\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.laptop_chromebook),\r\n        title: Text(\"Windows\"),\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.phone),\r\n        title: Text(\"Phone\"),\r\n      ),\r\n\r\n//      Text(\"Yet another element in List\"),\r\n\r\n//      Container(color: Colors.red, height: 50.0,)\r\n\r\n    ],\r\n  );",
+					"name" : "Internet access",
+					"code" : "<uses-permission android:name=\"android.permission.INTERNET\"/>",
 					"description" : ""
 				}
 			]
@@ -37,6 +58,191 @@
 					"id" : "sfdjsl1",
 					"name" : "Basic flutter app page",
 					"code" : "// Copyright 2018 The Flutter team. All rights reserved.\r\n// Use of this source code is governed by a BSD-style license that can be\r\n// found in the LICENSE file.\r\n\r\nimport 'package:flutter/material.dart';\r\n\r\nvoid main() => runApp(MyApp());\r\n\r\nclass MyApp extends StatelessWidget {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp(\r\n      title: 'Welcome to Flutter',\r\n      home: Scaffold(\r\n        appBar: AppBar(\r\n          title: Text('Welcome to Flutter'),\r\n        ),\r\n        body: Center(\r\n          child: Text('Hello World'),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Pages",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Basic flutter app page",
+					"code" : "// Copyright 2018 The Flutter team. All rights reserved.\r\n// Use of this source code is governed by a BSD-style license that can be\r\n// found in the LICENSE file.\r\n\r\nimport 'package:flutter/material.dart';\r\n\r\nvoid main() => runApp(MyApp());\r\n\r\nclass MyApp extends StatelessWidget {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp(\r\n      title: 'Welcome to Flutter',\r\n      home: Scaffold(\r\n        appBar: AppBar(\r\n          title: Text('Welcome to Flutter'),\r\n        ),\r\n        body: Center(\r\n          child: Text('Hello World'),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Gestures",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Click",
+					"code" : "\r\n#1\r\n\r\nCard(\r\n  child: new InkWell(\r\n    onTap: () {\r\n      print(\"tapped\");\r\n    },\r\n    child: Container(\r\n      width: 100.0,\r\n      height: 100.0,\r\n    ),\r\n  ),\r\n),\r\n\r\n\r\n#2\r\n\r\n\r\nnew GestureDetector(\r\n        onTap: (){\r\n          print(\"Container clicked\");\r\n        },\r\n        child: new Container(\r\n          width: 500.0,\r\n          padding: new EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 40.0),\r\n          color: Colors.green,\r\n          child: new Column(\r\n              children: [\r\n                new Text(\"Ableitungen\"),\r\n              ]\r\n          ),\r\n        )\r\n    );",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Routing",
+					"code" : "// Within the `FirstRoute` widget\r\nonPressed: () {\r\n  Navigator.push(\r\n    context,\r\n    MaterialPageRoute(builder: (context) => SecondRoute()),\r\n  );\r\n}",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Properties",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Border",
+					"code" : "TextField(\r\n        decoration: new InputDecoration(\r\n            focusedBorder: OutlineInputBorder(\r\n                borderSide: BorderSide(color: Colors.greenAccent, width: 5.0),\r\n            ),\r\n            enabledBorder: OutlineInputBorder(\r\n                borderSide: BorderSide(color: Colors.red, width: 5.0),\r\n            ),\r\n            hintText: 'Mobile Number',\r\n        ),\r\n    ),\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nContainer(\r\n  height: 100,\r\n  width: 100,\r\n  decoration: BoxDecoration(\r\n    border: Border.all(\r\n      color: Colors.blue,\r\n    ),\r\n    borderRadius: BorderRadius.circular(10.0),\r\n  ),\r\n  child: Center(\r\n    child: Text('mrflutter.com'),\r\n  ),\r\n),",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Background image",
+					"code" : "Widget _buildProgrammCard() {\r\n  return Container(\r\n    height: 250,\r\n    child: Card(\r\n      child: Image.asset(\r\n        'assets/push.jpg',\r\n        fit: BoxFit.cover,\r\n      ),\r\n      shape: RoundedRectangleBorder(\r\n        borderRadius: BorderRadius.circular(10.0),\r\n      ),\r\n      elevation: 5,\r\n      margin: EdgeInsets.all(10),\r\n    ),\r\n  );",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Padding and Margin",
+					"code" : "\r\n\r\n\r\nPadding(\r\n\t// Even Padding On All Sides\r\n    padding: EdgeInsets.all(10.0),\r\n    // Symetric Padding\r\n    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),\r\n    // Different Padding For All Sides\r\n    padding: EdgeInsets.fromLTRB(1.0, 2.0, 3.0, 4.0);\r\n    \r\n    child: Child\r\n    (\r\n    \t...\r\n    ),\r\n)\r\n\r\n\r\n\r\nnew Container(\r\n    margin: const EdgeInsets.only(top: 10.0),\r\n    child : new RaisedButton(\r\n                onPressed: _submit,\r\n                child: new Text('Login'),\r\n              ),",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Positioning",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Stacking",
+					"code" : "\r\n\r\n\r\n\r\nRow(\r\n  mainAxisAlignment: MainAxisAlignment.spaceEvenly,\r\n  children: [\r\n    Image.asset('images/pic1.jpg'),\r\n    Image.asset('images/pic2.jpg'),\r\n    Image.asset('images/pic3.jpg'),\r\n  ],\r\n);\r\n\r\n\r\n\r\n\r\n\r\n\r\nColumn(\r\n  mainAxisAlignment: MainAxisAlignment.spaceEvenly,\r\n  children: [\r\n    Image.asset('images/pic1.jpg'),\r\n    Image.asset('images/pic2.jpg'),\r\n    Image.asset('images/pic3.jpg'),\r\n  ],\r\n);\r\n\r\n\r\n\r\nRow(\r\n  crossAxisAlignment: CrossAxisAlignment.center,\r\n  children: [\r\n    Expanded(\r\n      child: Image.asset('images/pic1.jpg'),\r\n    ),\r\n    Expanded(\r\n      child: Image.asset('images/pic2.jpg'),\r\n    ),\r\n    Expanded(\r\n      child: Image.asset('images/pic3.jpg'),\r\n    ),\r\n  ],\r\n);\r\n\r\n\r\n\r\n\r\n\r\nRow(\r\n  crossAxisAlignment: CrossAxisAlignment.center,\r\n  children: [\r\n    Expanded(\r\n      child: Image.asset('images/pic1.jpg'),\r\n    ),\r\n    Expanded(\r\n      flex: 2,\r\n      child: Image.asset('images/pic2.jpg'),\r\n    ),\r\n    Expanded(\r\n      child: Image.asset('images/pic3.jpg'),\r\n    ),\r\n  ],\r\n);\r\n\r\n\r\n\r\n\r\n\r\nRow(\r\n  mainAxisSize: MainAxisSize.min,\r\n  children: [\r\n    Icon(Icons.star, color: Colors.green[500]),\r\n    Icon(Icons.star, color: Colors.green[500]),\r\n    Icon(Icons.star, color: Colors.green[500]),\r\n    Icon(Icons.star, color: Colors.black),\r\n    Icon(Icons.star, color: Colors.black),\r\n  ],\r\n)",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Positoned",
+					"code" : "Positioned(\r\n  top:0.0,\r\n  right: 0.0,\r\n  child: Padding(\r\n    padding: const EdgeInsets.all(8.0),\r\n    child: new IconButton(\r\n      icon: Icon(Icons.cancel,color: Colors.red,),\r\n      onPressed: () {}),\r\n  ),\r\n)\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Wrap",
+					"code" : "Wrap(\r\n  spacing: 8.0, // gap between adjacent chips\r\n  runSpacing: 4.0, // gap between lines\r\n  children: <Widget>[\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('AH')),\r\n      label: Text('Hamilton'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('ML')),\r\n      label: Text('Lafayette'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('HM')),\r\n      label: Text('Mulligan'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('JL')),\r\n      label: Text('Laurens'),\r\n    ),\r\n  ],\r\n)",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "FAQs",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "How to make border round in flutter?",
+					"code" : "\r\n#1. Border decoration in container.\r\n\r\nContainer(\r\n  decoration: BoxDecoration(\r\n    border: Border.all(\r\n      color: Colors.red[500],\r\n    ),\r\n    borderRadius: BorderRadius.all(Radius.circular(20))\r\n  ),\r\n  child: ...\r\n)",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Positoned",
+					"code" : "Positioned(\r\n  top:0.0,\r\n  right: 0.0,\r\n  child: Padding(\r\n    padding: const EdgeInsets.all(8.0),\r\n    child: new IconButton(\r\n      icon: Icon(Icons.cancel,color: Colors.red,),\r\n      onPressed: () {}),\r\n  ),\r\n)\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Wrap",
+					"code" : "Wrap(\r\n  spacing: 8.0, // gap between adjacent chips\r\n  runSpacing: 4.0, // gap between lines\r\n  children: <Widget>[\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('AH')),\r\n      label: Text('Hamilton'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('ML')),\r\n      label: Text('Lafayette'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('HM')),\r\n      label: Text('Mulligan'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('JL')),\r\n      label: Text('Laurens'),\r\n    ),\r\n  ],\r\n)",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Syntax",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Named parameters in flutter",
+					"code" : "foo({@required String name}) {...}\r\n\r\nfoo(); // results in static warning",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Positoned",
+					"code" : "Positioned(\r\n  top:0.0,\r\n  right: 0.0,\r\n  child: Padding(\r\n    padding: const EdgeInsets.all(8.0),\r\n    child: new IconButton(\r\n      icon: Icon(Icons.cancel,color: Colors.red,),\r\n      onPressed: () {}),\r\n  ),\r\n)\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Wrap",
+					"code" : "Wrap(\r\n  spacing: 8.0, // gap between adjacent chips\r\n  runSpacing: 4.0, // gap between lines\r\n  children: <Widget>[\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('AH')),\r\n      label: Text('Hamilton'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('ML')),\r\n      label: Text('Lafayette'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('HM')),\r\n      label: Text('Mulligan'),\r\n    ),\r\n    Chip(\r\n      avatar: CircleAvatar(backgroundColor: Colors.blue.shade900, child: Text('JL')),\r\n      label: Text('Laurens'),\r\n    ),\r\n  ],\r\n)",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Components",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Scaffold",
+					"code" : "import 'package:flutter/material.dart';\r\nimport './app_screens/home.dart';\r\n\r\nvoid main() {\r\n  runApp(MaterialApp(\r\n\r\n\t  title: \"Exploring UI widgets\",\r\n\r\n\t  home: Scaffold(\r\n      appBar: AppBar(title: Text(\"Long List\"),),\r\n      body: getListView()\r\n    ),\r\n\r\n  ));\r\n}\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Listview",
+					"code" : "\r\n****** Multiple *****\r\n\r\nList<String> getListElements() {\r\n\r\n\tvar items = List<String>.generate(1000, (counter) => \"Item $counter\");\r\n\treturn items;\r\n}\r\n\r\nWidget getListView() {\r\n\r\n\tvar listItems = getListElements();\r\n\r\n\tvar listView = ListView.builder(\r\n                                               itemCount: listItems.length,\r\n\t\t\titemBuilder: (context, index) {\r\n\r\n\t\t\t\treturn ListTile(\r\n\t\t\t\t\tleading: Icon(Icons.arrow_right),\r\n\t\t\t\t\ttitle: Text(listItems[index]),\r\n\t\t\t\t\tonTap: () {\r\n\t\t\t\t\t\tdebugPrint('${listItems[index]} was tapped');\r\n\t\t\t\t\t},\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t);\r\n\r\n\treturn listView;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n****** Basic ***********\r\n\r\n\r\nWidget getListView() {\r\n\r\n  var listView = ListView(\r\n    children: <Widget>[\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.landscape),\r\n        title: Text(\"Landscape\"),\r\n        subtitle: Text(\"Beautiful View !\"),\r\n        trailing: Icon(Icons.wb_sunny),\r\n        onTap: () {\r\n          debugPrint(\"Landscape tapped\");\r\n        },\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.laptop_chromebook),\r\n        title: Text(\"Windows\"),\r\n      ),\r\n\r\n      ListTile(\r\n        leading: Icon(Icons.phone),\r\n        title: Text(\"Phone\"),\r\n      ),\r\n\r\n//      Text(\"Yet another element in List\"),\r\n\r\n//      Container(color: Colors.red, height: 50.0,)\r\n\r\n    ],\r\n  );",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Image",
+					"code" : "// pubspec.yaml\r\nflutter:\r\n  assets:\r\n    - graphics/\r\n\r\n// Inside your widget\r\nImage(image: AssetImage('graphics/background.png'))\r\n\r\n\r\nImage.network(\r\n          url,\r\n          width: width,\r\n          height: height,\r\n          fit: BoxFit.cover,\r\n        ));\r\n\r\n\r\n\r\n\r\nmake width and height match parent.\r\n\r\n\r\nwidth: double.infinity,\r\n height: double.infinity\r\n\r\n\r\n\r\nCircular imager ***************\r\n\r\n\r\n\r\nClipRRect(\r\n    borderRadius: BorderRadius.circular(8.0),\r\n    child: Image.network(\r\n        subject['images']['large'],\r\n        height: 150.0,\r\n        width: 100.0,\r\n    ),\r\n)",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Card",
+					"code" : "Card(\r\n    clipBehavior: Clip.antiAlias,\r\n    child: Column(\r\n        children: [\r\n        ListTile(\r\n            leading: Icon(Icons.arrow_drop_down_circle),\r\n            title: const Text('Card title 1'),\r\n            subtitle: Text(\r\n            'Secondary Text',\r\n            style: TextStyle(color: Colors.black.withOpacity(0.6)),\r\n            ),\r\n        ),\r\n        Padding(\r\n            padding: const EdgeInsets.all(16.0),\r\n            child: Text(\r\n            'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',\r\n            style: TextStyle(color: Colors.black.withOpacity(0.6)),\r\n            ),\r\n        ),\r\n        ButtonBar(\r\n            alignment: MainAxisAlignment.start,\r\n            children: [\r\n            FlatButton(\r\n                textColor: const Color(0xFF6200EE),\r\n                onPressed: () {\r\n                // Perform some action\r\n                },\r\n                child: const Text('ACTION 1'),\r\n            ),\r\n            FlatButton(\r\n                textColor: const Color(0xFF6200EE),\r\n                onPressed: () {\r\n                // Perform some action\r\n                },\r\n                child: const Text('ACTION 2'),\r\n            ),\r\n            ],\r\n        ),\r\n        Image.asset('assets/card-sample-image.jpg'),\r\n        Image.asset('assets/card-sample-image-2.jpg'),\r\n        ],\r\n    ),\r\n),",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Container",
+					"code" : "Card(\r\n    clipBehavior: Clip.antiAlias,\r\n    child: Column(\r\n        children: [\r\n        ListTile(\r\n            leading: Icon(Icons.arrow_drop_down_circle),\r\n            title: const Text('Card title 1'),\r\n            subtitle: Text(\r\n            'Secondary Text',\r\n            style: TextStyle(color: Colors.black.withOpacity(0.6)),\r\n            ),\r\n        ),\r\n        Padding(\r\n            padding: const EdgeInsets.all(16.0),\r\n            child: Text(\r\n            'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',\r\n            style: TextStyle(color: Colors.black.withOpacity(0.6)),\r\n            ),\r\n        ),\r\n        ButtonBar(\r\n            alignment: MainAxisAlignment.start,\r\n            children: [\r\n            FlatButton(\r\n                textColor: const Color(0xFF6200EE),\r\n                onPressed: () {\r\n                // Perform some action\r\n                },\r\n                child: const Text('ACTION 1'),\r\n            ),\r\n            FlatButton(\r\n                textColor: const Color(0xFF6200EE),\r\n                onPressed: () {\r\n                // Perform some action\r\n                },\r\n                child: const Text('ACTION 2'),\r\n            ),\r\n            ],\r\n        ),\r\n        Image.asset('assets/card-sample-image.jpg'),\r\n        Image.asset('assets/card-sample-image-2.jpg'),\r\n        ],\r\n    ),\r\n),",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Text",
+					"code" : " new Text(\r\n    \"material button\",\r\n    style: new TextStyle(\r\n      fontSize: 20.0,\r\n      color: Colors.yellow,\r\n    ),\r\n\r\n\r\n\r\n\r\nuse \"\"\" \"\"\"\" for holding multiline string in dart variable.",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Scrollview",
+					"code" : "return new Container(\r\n  child: new SingleChildScrollView(\r\n    child: new Column(\r\n      children: <Widget>[\r\n        _showChild1(),\r\n        _showChild2(),\r\n        ...\r\n        _showChildN()\r\n      ]\r\n    )\r\n  )",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Video Player",
+					"code" : "pubspec.yaml **************\r\n\r\n\r\ndependencies:\r\n  flutter:\r\n    sdk: flutter\r\n  chewie: ^0.9.7\r\n  video_player: ^1.0.1\r\n\r\n\r\n\r\n\r\n\r\nchewie_list_item.dart *********\r\n\r\n\r\nimport 'package:chewie/chewie.dart';\r\nimport 'package:flutter/material.dart';\r\nimport 'package:video_player/video_player.dart';\r\n\r\nclass ChewieListItem extends StatefulWidget {\r\n  // This will contain the URL/asset path which we want to play\r\n  final VideoPlayerController videoPlayerController;\r\n  final bool looping;\r\n\r\n  ChewieListItem({\r\n    @required this.videoPlayerController,\r\n    this.looping,\r\n    Key key,\r\n  }) : super(key: key);\r\n\r\n  @override\r\n  _ChewieListItemState createState() => _ChewieListItemState();\r\n}\r\n\r\nclass _ChewieListItemState extends State<ChewieListItem> {\r\n  ChewieController _chewieController;\r\n\r\n  @override\r\n  void initState() {\r\n    super.initState();\r\n    // Wrapper on top of the videoPlayerController\r\n    _chewieController = ChewieController(\r\n      videoPlayerController: widget.videoPlayerController,\r\n      aspectRatio: 16 / 9,\r\n      // Prepare the video to be played and display the first frame\r\n      autoInitialize: true,\r\n      looping: widget.looping,\r\n      // Errors can occur for example when trying to play a video\r\n      // from a non-existent URL\r\n      errorBuilder: (context, errorMessage) {\r\n        return Center(\r\n          child: Text(\r\n            errorMessage,\r\n            style: TextStyle(color: Colors.white),\r\n          ),\r\n        );\r\n      },\r\n    );\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Padding(\r\n      padding: const EdgeInsets.all(8.0),\r\n      child: Chewie(\r\n        controller: _chewieController,\r\n      ),\r\n    );\r\n  }\r\n\r\n  @override\r\n  void dispose() {\r\n    super.dispose();\r\n    // IMPORTANT to dispose of all the used resources\r\n    widget.videoPlayerController.dispose();\r\n    _chewieController.dispose();\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n\r\nmain.dart *********************\r\n\r\n\r\n\r\nimport 'package:chewie_prep/chewie_list_item.dart';\r\nimport 'package:flutter/material.dart';\r\nimport 'package:video_player/video_player.dart';\r\n\r\nvoid main() => runApp(MyApp());\r\n\r\nclass MyApp extends StatelessWidget {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp(\r\n      title: 'Flutter Demo',\r\n      theme: ThemeData(\r\n        primarySwatch: Colors.blue,\r\n      ),\r\n      home: MyHomePage(),\r\n    );\r\n  }\r\n}\r\n\r\nclass MyHomePage extends StatelessWidget {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      appBar: AppBar(\r\n        title: Text('Video Player'),\r\n      ),\r\n      body: ListView(\r\n        children: <Widget>[\r\n          ChewieListItem(\r\n            videoPlayerController: VideoPlayerController.asset(\r\n              'videos/IntroVideo.mp4',\r\n            ),\r\n            looping: true,\r\n          ),\r\n          ChewieListItem(\r\n            videoPlayerController: VideoPlayerController.network(\r\n              'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',\r\n            ),\r\n          ),\r\n          ChewieListItem(\r\n            // This URL doesn't exist - will display an error\r\n            videoPlayerController: VideoPlayerController.network(\r\n              'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/error.mp4',\r\n            ),\r\n          ),\r\n        ],\r\n      ),\r\n    );\r\n  }\r\n}\r\n\r\n\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Icon",
+					"code" : " body: Row(  \r\n        mainAxisAlignment: MainAxisAlignment.spaceAround,  \r\n          children: <Widget>[  \r\n            Icon(Icons.camera_enhance),  \r\n            Icon(Icons.camera_front),  \r\n            Icon(Icons.camera_rear),  \r\n      ]),  ",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Grid View",
+					"code" : "GridView.count(\r\n  // Create a grid with 2 columns. If you change the scrollDirection to\r\n  // horizontal, this produces 2 rows.\r\n  crossAxisCount: 2,\r\n  // Generate 100 widgets that display their index in the List.\r\n  children: List.generate(100, (index) {\r\n    return Center(\r\n      child: Text(\r\n        'Item $index',\r\n        style: Theme.of(context).textTheme.headline5,\r\n      ),\r\n    );\r\n  }),\r\n);\r\n",
 					"description" : ""
 				}
 			]
