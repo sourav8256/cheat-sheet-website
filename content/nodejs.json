@@ -42,6 +42,23 @@
 			]
 		},
 		{
+			"category-name" : "Server",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Keep nodejs application running forever",
+					"code" : "pm2 start app\r\npm2 stop app\r\npm2 reload app\r\n\r\n\r\n\"pm2 save\" will generate a startup script that will save all the currently running applications and start on reboot.",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Access Control",
+					"code" : "\r\n// Add headers\r\napp.use(function (req, res, next) {\r\n\r\n    // Website you wish to allow to connect\r\n    res.setHeader('Access-Control-Allow-Origin', '*');\r\n\r\n    // Request methods you wish to allow\r\n    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');\r\n\r\n    // Request headers you wish to allow\r\n    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');\r\n\r\n    // Set to true if you need the website to include cookies in the requests sent\r\n    // to the API (e.g. in case you use sessions)\r\n    res.setHeader('Access-Control-Allow-Credentials', true);\r\n\r\n    // Pass to next layer of middleware\r\n    next();\r\n});\r\n ",
+					"description" : ""
+				}
+			]
+		},
+		{
 			"category-name" : "File System\r\n",
 			"sub-list" : [
 				{
@@ -65,6 +82,23 @@
 					"id" : "sfdjsl1",
 					"name" : "String conversion",
 					"code" : "******************\r\nJson to string\r\n\r\nJSON.stringify(value, replacer, space)\r\n\r\nconsole.log(JSON.stringify(j));\r\n\r\nconsole.log(JSON.stringify(j,null,2)); (Third argument is for indentation or beautifying)\r\n\r\n\r\n*********************\r\nStrign to json\r\n\r\n\r\nvar obj = JSON.parse('{ \"name\":\"John\", \"age\":30, \"city\":\"New York\"}');\r\n",
+					"description" : ""
+				},
+				{
+					"id" : "sfdjsl1",
+					"name" : "Write file",
+					"code" : "fs = require('fs');\r\nfs.writeFile(filename, data, [encoding], [callback])\r\n\r\n\r\nfs = require('fs');\r\nfs.writeFile('helloworld.txt', 'Hello World!', function (err) {\r\n  if (err) return console.log(err);\r\n  console.log('Hello World > helloworld.txt');\r\n});\r\n\r\n\r\nfs = require('fs')\r\nfs.writeFile('/etc/doesntexist', 'abc', function (err,data) {\r\n  if (err) {\r\n    return console.log(err);\r\n  }\r\n  console.log(data);\r\n});\r\n\r\n\r\nfs.writeFileSync('../data/phraseFreqs.json', JSON.stringify(output));",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Quick Access",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "full http server",
+					"code" : "https://github.com/nbluis/static-server",
 					"description" : ""
 				},
 				{
