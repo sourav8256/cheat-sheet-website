@@ -108,6 +108,17 @@
 					"description" : ""
 				}
 			]
+		},
+		{
+			"category-name" : "Graphics",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Nodejs canvas",
+					"code" : "npm i canvas --save\r\n\r\nconst fs = require('fs')\r\nconst { createCanvas, loadImage } = require('canvas')\r\nconst width = 1200\r\nconst height = 630\r\nconst canvas = createCanvas(width, height)\r\nconst context = canvas.getContext('2d')\r\ncontext.fillStyle = '#000'\r\ncontext.fillRect(0, 0, width, height)\r\ncontext.font = 'bold 70pt Menlo'\r\ncontext.textAlign = 'center'\r\ncontext.textBaseline = 'top'\r\ncontext.fillStyle = '#3574d4'\r\nconst text = 'Hello, World!'\r\nconst textWidth = context.measureText(text).width\r\ncontext.fillRect(600 - textWidth / 2 - 10, 170 - 5, textWidth + 20, 120)\r\ncontext.fillStyle = '#fff'\r\ncontext.fillText(text, 600, 170)\r\ncontext.fillStyle = '#fff'\r\ncontext.font = 'bold 30pt Menlo'\r\ncontext.fillText('flaviocopes.com', 600, 530)\r\nconst buffer = canvas.toBuffer('image/png')\r\nfs.writeFileSync('./output.png', buffer)",
+					"description" : ""
+				}
+			]
 		}
 	]
 }
