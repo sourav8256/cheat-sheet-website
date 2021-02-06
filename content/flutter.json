@@ -13,6 +13,17 @@
 			]
 		},
 		{
+			"category-name" : "Navigation",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Pages",
+					"code" : " onPressed: () {\r\n          Navigator.push(\r\n            super.context,\r\n            MaterialPageRoute(builder: (context) => Index()),\r\n          );\r\n        },",
+					"description" : ""
+				}
+			]
+		},
+		{
 			"category-name" : "Shortcuts",
 			"sub-list" : [
 				{
@@ -200,7 +211,7 @@
 				{
 					"id" : "sfdjsl1",
 					"name" : "Image",
-					"code" : "// pubspec.yaml\r\nflutter:\r\n  assets:\r\n    - graphics/\r\n\r\n// Inside your widget\r\nImage(image: AssetImage('graphics/background.png'))\r\n\r\n\r\nImage.network(\r\n          url,\r\n          width: width,\r\n          height: height,\r\n          fit: BoxFit.cover,\r\n        ));\r\n\r\n\r\n\r\n\r\nmake width and height match parent.\r\n\r\n\r\nwidth: double.infinity,\r\n height: double.infinity\r\n\r\n\r\n\r\nCircular imager ***************\r\n\r\n\r\n\r\nClipRRect(\r\n    borderRadius: BorderRadius.circular(8.0),\r\n    child: Image.network(\r\n        subject['images']['large'],\r\n        height: 150.0,\r\n        width: 100.0,\r\n    ),\r\n)",
+					"code" : "// pubspec.yaml\r\nflutter:\r\n  assets:\r\n    - graphics/\r\n\r\n// Inside your widget\r\nImage(image: AssetImage('graphics/background.png'))\r\n\r\n\r\nImage.network(\r\n          url,\r\n          width: width,\r\n          height: height,\r\n          fit: BoxFit.cover,\r\n        ));\r\n\r\n\r\n\r\n\r\nmake width and height match parent.\r\n\r\n\r\nwidth: double.infinity,\r\n height: double.infinity\r\n\r\n\r\n\r\nCircular imager ***************\r\n\r\n\r\n\r\nClipRRect(\r\n    borderRadius: BorderRadius.circular(8.0),\r\n    child: Image.network(\r\n        subject['images']['large'],\r\n        height: 150.0,\r\n        width: 100.0,\r\n    ),\r\n)\r\n\r\n\r\n\r\n\r\n\r\nalso an alternative\r\n\r\n\r\nnew Container(\r\n                    width: 190.0,\r\n                    height: 190.0,\r\n                    decoration: new BoxDecoration(\r\n                        shape: BoxShape.circle,\r\n                        image: new DecorationImage(\r\n                            fit: BoxFit.fill,\r\n                            image: new NetworkImage(\r\n                                \"https://i.imgur.com/BoN9kdC.png\")\r\n                        )\r\n                    )),",
 					"description" : ""
 				},
 				{
