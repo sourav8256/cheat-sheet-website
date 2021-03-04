@@ -13,6 +13,28 @@
 			]
 		},
 		{
+			"category-name" : "Processes",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Making http request",
+					"code" : "\r\n\r\n\r\ndependencies:\r\n  http: ^0.12.2\r\n\r\n\r\n\r\n\r\n\r\nimport 'dart:convert' as convert;\r\nimport 'package:http/http.dart' as http;\r\n\r\nvoid main(List<String> arguments) async {\r\n  // This example uses the Google Books API to search for books about http.\r\n  // https://developers.google.com/books/docs/overview\r\n  var url = 'https://www.googleapis.com/books/v1/volumes?q={http}';\r\n\r\n  // Await the http get response, then decode the json-formatted response.\r\n  var response = await http.get(url);\r\n  if (response.statusCode == 200) {\r\n    var jsonResponse = convert.jsonDecode(response.body);\r\n    var itemCount = jsonResponse['totalItems'];\r\n    print('Number of books about http: $itemCount.');\r\n  } else {\r\n    print('Request failed with status: ${response.statusCode}.');\r\n  }\r\n}\r\n\r\n\r\n\r\n",
+					"description" : ""
+				}
+			]
+		},
+		{
+			"category-name" : "Configurations",
+			"sub-list" : [
+				{
+					"id" : "sfdjsl1",
+					"name" : "Release Build",
+					"code" : "Creating keystore\r\n\r\nfor linux\r\n\r\nkeytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key\r\n\r\n\r\nfor windows\r\n\r\nkeytool -genkey -v -keystore c:\\Users\\sourav\\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key\r\n\r\n\r\n\r\nstep 2 *****************************\r\n\r\nCreate a file named <app dir>/android/key.properties that contains a reference to your keystore:\r\n\r\ncontent_copy\r\nstorePassword=<password from previous step>\r\nkeyPassword=<password from previous step>\r\nkeyAlias=key\r\nstoreFile=<location of the key store file, such as /Users/<user name>/key.jks>\r\n\r\n\r\n\r\n\\\\android app\\\\app\\\\key.jks\r\n\r\ngive key location while escaping backward slashes\r\n\r\n\r\n\r\nstep 3 *********************************\r\n\r\n\r\nReference the keystore from the app\r\nCreate a file named <app dir>/android/key.properties that contains a reference to your keystore:\r\n\r\ncontent_copy\r\nstorePassword=<password from previous step>\r\nkeyPassword=<password from previous step>\r\nkeyAlias=key\r\nstoreFile=<location of the key store file, such as /Users/<user name>/key.jks>\r\n\r\nWarning: Keep the key.properties file private; don’t check it into public source control.\r\n\r\nConfigure signing in gradle\r\nConfigure signing for your app by editing the <app dir>/android/app/build.gradle file.\r\n\r\nAdd code before android block:\r\n\r\ncontent_copy\r\n   android {\r\n      ...\r\n   }\r\nWith the keystore information from your properties file:\r\n\r\ncontent_copy\r\n   def keystoreProperties = new Properties()\r\n   def keystorePropertiesFile = rootProject.file('key.properties')\r\n   if (keystorePropertiesFile.exists()) {\r\n       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))\r\n   }\r\n\r\n   android {\r\n         ...\r\n   }\r\nLoad the key.properties file into the keystoreProperties object.\r\n\r\nAdd code before buildTypes block:\r\n\r\ncontent_copy\r\n   buildTypes {\r\n       release {\r\n           // TODO: Add your own signing config for the release build.\r\n           // Signing with the debug keys for now,\r\n           // so `flutter run --release` works.\r\n           signingConfig signingConfigs.debug\r\n       }\r\n   }\r\nWith the signing configuration info:\r\n\r\ncontent_copy\r\n   signingConfigs {\r\n       release {\r\n           keyAlias keystoreProperties['keyAlias']\r\n           keyPassword keystoreProperties['keyPassword']\r\n           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null\r\n           storePassword keystoreProperties['storePassword']\r\n       }\r\n   }\r\n   buildTypes {\r\n       release {\r\n           signingConfig signingConfigs.release\r\n       }\r\n   }\r\nConfigure the signingConfigs block in your module’s build.gradle file.\r\n\r\nRelease builds of your app will now be signed automatically.\r\n\r\n\r\n\r\n\r\nTo generate release apk *****************\r\n\r\n\r\nrun : flutter build apk --release\r\n\r\n\r\nif you want to split apk as per platform\r\n\r\nflutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi",
+					"description" : ""
+				}
+			]
+		},
+		{
 			"category-name" : "Navigation",
 			"sub-list" : [
 				{
