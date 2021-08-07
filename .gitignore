@@ -104,4 +104,5 @@ dist
 .tern-port
 
 
-.io/*
+
+io/out.txt
